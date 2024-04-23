@@ -1,0 +1,11 @@
+<div class="wrapper" layout="row">
+	<aside class="main-sidebar" flex=30>
+		<section class="sidebar">
+		<ul class="sidebar-menu" ng-transclude></ul>
+	</section>
+	</aside>
+	<div class="tab-content content-wrapper" fix-min-height-element  flex=70>
+		<div ui-tab-pane class="tab-pane" ng-repeat="tab in tabs" ng-class="{active: tab.active}" ui-tab-content-transclude="tab" ui-tab-dynamic-content-transclude="tab">
+		</div>
+	</div>
+</div>

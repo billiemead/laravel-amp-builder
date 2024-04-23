@@ -1,0 +1,84 @@
+<md-dialog  rc-drag="md-toolbar" aria-label="Infusionsoft" flex="50">
+	<form ng-submit="ok()" name="form" ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Infusionsoft</h2>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <md-icon class="fa fa-times" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<div ng-show="accounts.length==0">
+				<md-button ng-click="openOauthDialog()" class="md-raised md-secondary">{{'add_account' | lang}}</md-button>
+			</div>
+			<div ng-show="accounts.length">
+				
+				<md-input-container class="md-block">
+					<label>Select an account</label>
+					<md-select ng-model="data.account" required ng-change="changeAccount()">
+						<md-option ng-repeat="item in accounts" value="{{item.id}}">{{item.account_name}}</md-option>
+					</md-select>
+				</md-input-container>
+				<label>Apply Tags</label>
+				<md-input-container class="md-block">
+					
+					<md-checkbox ng-model="data.tags[tag.id]" ng-repeat="tag in tags">{{tag.name}}</md-checkbox>
+				</md-input-container>
+				<label>Want add to Campaign</label>
+				<md-input-container class="md-block">
+					<label>Select a Campaign</label>
+					<md-select ng-model="data.list" ng-change="changeList()">
+						<md-option value="">None</md-option>
+						<md-option ng-repeat="item in list" value="{{item.id}}">{{item.name}}</md-option>
+					</md-select>
+				</md-input-container>
+				<md-input-container class="md-block" ng-show="data.list.length">
+					<label>Select a Sequence</label>
+					<md-select ng-model="data.sequence" ng-required="data.list.length">
+						<md-option ng-repeat="item in sequences" value="{{item.id}}">{{item.name}}</md-option>
+					</md-select>
+				</md-input-container>
+			</div>
+			<div ng-show="data.account.length" class="field-mappings">
+				<h3>Fields Mapping</h3>
+				<div layout="column">
+					<div class="field-mapping-row" layout="row">
+						<div flex="40">Infusionsoft Fields</div>
+						<div flex="60">Form Fields</div>
+					</div>
+				</div>
+				<div layout="column">
+					<div class="field-mapping-row" layout="row" ng-repeat="(key,value) in mapping_fields" ng-if="key!='custom_fields' && value.type != 'default_value'" && value.name.length">
+						<div flex="40">{{value.name}}</div>
+						<div flex="60">
+							<select class="form-control" ng-required ="value.required" ng-model="data.fields[key]">
+								<option value=""></option>
+								<option ng-repeat="field in fieldList" value="{{field.name}}">{{field.display_name}}</option>
+							</select>
+						</div>
+					</div>
+					<div class="field-mapping-row" layout="row" ng-repeat="(key,value) in mapping_fields.custom_fields">
+						<div flex="40">{{value.name}}</div>
+						<div flex="60">
+							<select class="form-control" ng-required ="value.required" ng-model="data.fields.custom_fields[key]">
+								<option value=""></option>
+								<option ng-repeat="field in fieldList" value="{{field.name}}">{{field.display_name}}</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		<md-button ng-show="accounts.length" ng-click="openOauthDialog()" class="md-raised md-secondary">{{'add_more_account' | lang}}</md-button>
+		<span flex></span>
+		<md-button type="submit" class="md-raised md-primary" ng-show="accounts.length" ng-disabled="disable_submit">{{'ok' | lang}}</md-button>
+		<md-button ng-click="$dismiss()">{{'cancel' | lang}}</md-button>
+    </md-dialog-actions>
+  </form>
+	</md-dialog>

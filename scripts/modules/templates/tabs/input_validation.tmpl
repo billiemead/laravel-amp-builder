@@ -1,0 +1,23 @@
+<collapsible-item item-title="{{'formmodule.validations.title' | lang}}" initially-open="true">
+	
+	<div class="form-group">
+		<md-checkbox ng-model="data.validators.required" aria-label="Required" ng-change="changeData(false)">
+			{{'formmodule.validations.required' | lang }}
+		</md-checkbox>
+	</div>
+	
+
+	<div class="" ng-show="field_type=='number'">
+		<md-checkbox ng-model="data.validators.min" aria-label="Min" ng-change="changeData(false)">
+			{{'formmodule.validations.min' | lang }}
+		</md-checkbox>
+		<input ng-model="data.validators.min_value" placholder="Minimum Value" aria-label="Integer" class="form-control" ng-show="data.validators.min" ng-change="changeData(false)">
+	</div>
+	<div class="" ng-show="field_type=='number'">
+		<md-checkbox ng-model="data.validators.max" aria-label="Min" ng-change="changeData(false)">
+			{{'formmodule.validations.max' | lang }}
+		</md-checkbox>
+		<input ng-model="data.validators.max_value" placholder="Maximum Value"class="form-control"  aria-label="Integer" ng-show="data.validators.max" ng-change="changeData(false)">
+	</div>
+	
+</collapsible-item>

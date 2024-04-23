@@ -1,0 +1,20 @@
+<collapsible-item item-title="{{'imagemodule.title' | lang}}" initially-open="true">
+	<div class="form-group">
+		<label>{{'imagemodule.entry_image' | lang}}</label>
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<button class="btn btn-outline-secondary" ng-click="selectFile()">{{'imagemodule.browse' | lang}}</button>
+			</div>
+			<input type="text" class="form-control" ng-model="data.src" disabled="disabled">
+		</div>
+	</div>
+	<div class="row form-group">
+		<widget-style-checkbox selected-widget="$moduleInstance" el-style="text-align">
+			<widget-style-checkbox-item value="left" icon="align-left"/>
+			<widget-style-checkbox-item value="center" icon="align-center"/>
+			<widget-style-checkbox-item value="right" icon="align-right"/>
+			<widget-style-checkbox-item value="justify" icon="align-justify"/>
+		</widget-style-checkbox>
+		<widget-style-label selected-widget="$moduleInstance" el-style="text-align" style="justify-content:center;">{{'textmodule.text_toolbar.entry_align' | lang }}</widget-style-label>
+	</div>
+</collapsible-item>

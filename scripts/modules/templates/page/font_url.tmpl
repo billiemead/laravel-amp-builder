@@ -1,0 +1,34 @@
+<md-dialog rc-drag="md-toolbar" aria-label=" {{('fontpopup.url_title')| lang }}">
+	<form ng-cloak ng-submit="ok()">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2> {{('fontpopup.url_title')| lang }}(<a href=" {{('fontpopup.url_help_article')| lang }}" target="_blank">?</a>) </h2>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <i class="fa fa-times" aria-label="Close dialog"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+
+			<md-input-container class="md-block">
+				<label>{{('fontpopup.entry_url')| lang }}</label>
+				<input type="text" required ng-model="data.url">
+			</md-input-container class="md-block">
+			
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		
+    <span flex></span>
+		<md-button type="submit">
+			 {{('builder.ok')| lang }} 
+		</md-button>
+      <md-button ng-click="$dismiss()">
+         {{('builder.close')| lang }} 
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

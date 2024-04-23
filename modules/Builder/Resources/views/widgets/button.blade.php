@@ -1,0 +1,5 @@
+
+
+<span>{!! $widget->getText() !!}</span>
+
+

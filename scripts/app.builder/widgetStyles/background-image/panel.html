@@ -1,0 +1,36 @@
+<md-content flex layout="column" layout-padding class="md-whiteframe-1dp">
+	<div class="widget-style-border">
+		<widget-radio ng-value="vm.value.type" on-update="vm.updateType(value)">
+			<widget-option ng-value="'image'" text="Image" />
+			<widget-option ng-value="'gradient'" text="Gradient" />
+			<widget-option ng-value="'color'" text="Overlay"/>
+		</widget-radio>
+	</div>
+	<div  ng-if="vm.value.type == 'image'">
+		<div class="input-group">
+			<div class="input-group-prepend">
+				<button class="btn btn-outline-secondary" type="button" ng-click="vm.browserBgImage()">Browser</button>
+			</div>
+			<input type="text" ng-disabled="true" class="form-control" ng-model="vm.value.data.src">
+		</div>
+		<widget-radio ng-value="vm.value.data.repeat" on-update="vm.updateImage('repeat', value)" style="display:block;margin:5px 0;">
+			<widget-option  ng-value="'no-repeat'" text="No Repeat" />
+			<widget-option ng-value="'repeat'" text="Repeat" />
+			<widget-option ng-value="'repeat-x'" text="Repeat X" />
+			<widget-option ng-value="'repeat-y'" text="Repeat Y" />
+		</widget-radio>
+		<widget-radio ng-value="vm.value.data.size" on-update="vm.updateImage('size', value)" style="display:block;margin-bottom:5px;">
+			<widget-option  ng-value="'cover'" text="Cover" />
+			<widget-option ng-value="'contain'" text="Contain" />
+		</widget-radio>
+		<widget-radio ng-value="vm.value.data.attachment" on-update="vm.updateImage('attachment', value)" style="display:block;margin-bottom:5px;">
+			<widget-option  ng-value="'fixed'" text="Fixed" />
+			<widget-option ng-value="'scroll'" text="Scroll" />
+		</widget-radio>
+	</div>
+	<div gradient-generator ng-if="vm.value.type == 'gradient'" ng-model="vm.value.data" ng-change="vm.changeBackgroundGradient()"></div>
+	<div  ng-if="vm.value.type == 'color'">
+		<widget-style-color el-style="color" with-opacity="true" ng-value="vm.value.data" on-update="vm.updateColor(value)"/>
+	</div>
+</md-content>
+

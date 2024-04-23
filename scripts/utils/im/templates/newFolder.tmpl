@@ -1,0 +1,30 @@
+<md-dialog rc-drag="md-toolbar" aria-label="" class="">
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>
+			{{'filemanager.new_folder' | lang}}
+			</h2>
+			<span flex></span>
+			<md-button class="md-icon-button" ng-click="$dismiss()">
+			<i class="fa fa-times" aria-label="Close dialog"></i>
+			</md-button>
+		</div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<div class="form-group">
+				<label class="control-label">{{'filemanager.folder_name' | lang}}</label>
+				<div class="controls">
+					<input type="text" ng-model="name" class="form-control"/>
+				</div>
+			</div>
+				
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		<div>
+			<md-button class="md-raised md-primary" title="{{'LBL_OK' | lang}}" ng-click="ok()">{{'LBL_OK' | lang}}</md-button>
+			<md-button class="" title="{{'LBL_CLOSE' | lang}}" ng-click="$dismiss()">{{'LBL_CLOSE' | lang}}</md-button>
+		</div>	
+	</md-dialog-actions>
+</md-dialog>

@@ -1,0 +1,98 @@
+<md-dialog rc-drag="md-toolbar" aria-label=" {{('builder.template_list_popup.title')| lang }} " class="md-section-list-popup" flex="80">
+	<form ng-cloak ng-submit="ok()">
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+			<h2> {{('builder.template_list_popup.title')| lang }} </h2>
+
+			<span flex></span>
+			<md-button class="md-icon-button" ng-click="$dismiss()">
+			  <i class="fa fa-times" aria-label="Close dialog"></i>
+			</md-button>
+			</div>
+		</md-toolbar>
+		<md-dialog-content class="scroll-container">
+			<md-nav-bar md-selected-nav-item="current_tab.name">
+				<md-nav-item md-nav-click="changeTab($index)" name="{{tab.name}}" ng-class="{active: current_tab.id==tab.id }" ng-repeat="tab in tabs">
+					<i class="{{tab.icon}}"></i>{{tab.name}}
+				</md-nav-item>
+			</md-nav-bar>
+			<div class="md-dialog-content" layout="row">
+				<div flex-xs flex-gt-xs="30">
+					<md-sidenav class="filter_theme_nav" md-component-id="sidenav"  md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+						<md-toolbar layout="row" class="">
+							<div class="md-toolbar-tools">
+								<span>Filter</span>
+							</div>
+						</md-toolbar>
+						<md-divider></md-divider>
+						<md-content>
+						<md-list>
+							<md-list-item  ng-click="filter('all')" ng-class="{selected: !category}">
+								All
+							</md-list-item>
+							<md-list-item ng-repeat="cat in categories"  ng-click="filter(cat.id)" ng-class="{selected: category==cat.id}">
+								{{cat.title}}
+							</md-list-item>
+						</md-list>
+						</md-content>
+					</md-sidenav>
+					
+				</div>
+				<div flex-xs flex-gt-xs="70">
+					<md-toolbar layout="row" class="">
+						<div class="md-toolbar-tools">
+							<span ng-if="category_name == false">All templates</span>
+							<span ng-if="category_name !== false"{{category_name}}</span>
+							<span ng-if="templates.length">({{templates.length}})</span>
+						</div>
+					</md-toolbar>
+					<md-content layout-padding md-whiteframe="3" layout="column">
+						<div layout="row" infinite-scroll='loader.nextPage()' infinite-scroll-container="'md-dialog-content.scroll-container'" infinite-scroll-disabled='loader.disabled' infinite-scroll-distance='1' infinite-scroll-listen-for-event="list:filtered" layout-wrap>
+							<div flex-xs flex-gt-xs="50" layout="column">
+								<md-card class="template-item">
+									<div class="card-image">
+										<img src="{{basePath}}/assets/images/noimg.png" class="md-card-image" alt="">
+									</div>
+									<md-card-title>
+									  <md-card-title-text>
+										<span class="md-headline">Blank</span>
+									  </md-card-title-text>
+									</md-card-title>
+								
+									<md-card-actions layout="row" layout-align="end center">
+									  <md-button class="md-raised md-primary" ng-click="selectBlankTemplate()">{{'builder.template_list_popup.select_template' | lang}}</md-button>
+									</md-card-actions>
+								</md-card>
+							</div>
+							<div flex-xs flex-gt-xs="50" layout="column" ng-repeat="template in loader.items">
+								<md-card class="template-item">
+									<div class="card-image">
+										<img ng-src="{{template.screenshot_url_nc}}" class="md-card-image" alt="{{template.name}}">
+									</div>
+									<md-card-title>
+									  <md-card-title-text>
+										<span class="md-headline">{{template.name}}</span>
+									  </md-card-title-text>
+									</md-card-title>
+									
+									<md-card-actions layout="row" layout-align="end center">
+									  <md-button class="md-raised md-primary" ng-click="selectTemplate(template)">{{'builder.template_list_popup.select_template' | lang}}</md-button>
+									  <md-button href="{{template.preview_url}}" target="_blank">{{'builder.template_list_popup.preview_template' | lang}}</md-button>
+									</md-card-actions>
+								</md-card>
+							</div>
+							<div ng-show='loader.busy'>Loading data...</div>
+						</div>
+						
+					</md-content>
+				</div>
+			</div>
+		</md-dialog-content>
+		<md-dialog-actions layout="row">
+			<span flex></span>
+			<md-button ng-click="$dismiss()">
+			 {{('builder.cancel')| lang }} 
+		  </md-button>
+		</md-dialog-actions>
+	</form>
+</md-dialog>

@@ -1,0 +1,191 @@
+
+.file_manager-popup, .gallery-media-popup, .icon-manager-popup{
+	.md-dialog-content{
+		padding:0;
+		height:100%;
+	}
+	.images-panel-content, .image-category-panel-container{
+		height:100%;
+		overflow: auto;
+	}
+	nav{
+		.input-group{
+			margin:6px 8px;
+		}
+	}
+	
+	.filist
+	{
+		height:100%;
+		.fi_name
+		{
+			text-overflow:ellipsis;
+			overflow:hidden;
+			width:100%;
+			display:none;
+			position: absolute;
+			bottom: 0;
+			background: #000;
+			color: #fff;
+			text-align: center;
+		}
+		.thumbnail
+		{
+			height:100%;
+			width:100%; 
+		}
+		
+		.item_wrapper{
+			position: relative;
+			display:inline-block;
+			vertical-align:top;
+			width: calc((100% / 5 - 10px));
+			margin-right: 10px;
+			margin-bottom: 10px;
+			border:1px solid transparent;
+			&.selected, &:hover
+			{
+				.fi_name
+				{
+				display:block;
+				}
+				border:1px solid #4DA5FF;
+				color:#000;
+			}
+			&:nth-child(5){
+				margin-right:0;
+			}
+			
+		}
+		.item-row{
+		}
+		.item{
+			height: 9vw;
+			width:100%;
+			overflow:hidden;
+		}
+		.thumb_holder{
+			text-align:center;
+			display:flex;
+			.thumb{
+				max-width:100%;
+				max-height: 100%;
+				top: 50%;
+				transform: translateY(-50%);
+				position: absolute;
+			}
+		}
+		
+	}
+	.image-list{
+		border-top:1px solid rgba(0,0,0,0.12);
+		border-bottom:1px solid rgba(0,0,0,0.12);
+		overflow: auto;
+		height: 100%;
+		.folder_list, .asset_list{
+			overflow-y:auto;
+		}
+	}
+	.folist {
+		width:auto;
+		height:100%;
+		min-height:200px;
+		border-right:1px solid rgba(0,0,0,0.12);
+		.fitem
+		{
+			white-space:nowrap;	
+			font-size:14px;
+			cursor:pointer;
+			font-weight:bold;
+			> a{
+				float:right;
+			}
+			.padding_div
+			{
+				padding-left:10px;
+				display:inline-block;
+			}
+			> .fitem
+			{
+				padding-left:10px;
+			}
+			> .fitem_inner{
+				padding:10px 0;
+				> .fitem_bg
+				{
+					padding:5px ;
+				}
+			}
+			
+			&.active{
+				> .fitem_inner
+				{
+					color:#fff;
+					
+					background-color: rgb(33,150,243);
+				}
+				> div
+				{
+					color:#000;
+					background:none;
+				}
+			}
+			
+			.fitem_bg
+			{
+				padding:0 5px;
+				display:inline-block;
+				max-width: 80%;
+				overflow: hidden;
+				> span{
+					text-transform: capitalize;
+				}
+			}
+		}
+		
+	}
+	
+	i.folder {
+		padding:0 2px;
+		background:url(../images/icons/folder.png) no-repeat;
+		width:16px;
+		height:16px;
+		display:inline-block;
+		vertical-align:top;
+		
+	}
+
+	
+
+	.folist .fitem span {
+		vertical-align:top;
+		line-height:17px;
+		
+	}
+	.im-toolbar
+	{
+		background:#FAFAFA;
+		padding:10px 5px;
+		p{
+			margin:14px 0;
+		}
+	}
+	.folder_item .thumb
+	{
+		background:url(../images/icons/normal_folder.png) no-repeat;
+		background-size:100% 100%;
+		height:100px;
+		width:80px;
+		display:block;
+	}
+	.back_item .thumb
+	{
+		background:url(../images/icons/old_go_previous.png) no-repeat;
+		background-size:100% 100%;
+		height:100px;
+		width:80px;
+	}
+}
+.moxie-shim.moxie-shim-html5{
+display:none;
+}

@@ -1,0 +1,56 @@
+<md-dialog rc-drag="md-toolbar" aria-label=" {{('builder.publishpopup.add_title')| lang }} " flex="50">
+	<form ng-cloak ng-submit="ok(form)" name="form">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>
+		<span ng-hide="!isNew"> {{('builder.publishpopup.add_title')| lang }} </span>
+		<span ng-hide="isNew"> {{('builder.publishpopup.edit_title')| lang }} </span>
+		</h2>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <i class="fa fa-times" aria-label="Close dialog"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<md-input-container class="md-block">
+				<md-radio-group ng-model="data.subdomain">
+			  <md-radio-button value="1" class="md-primary"> {{('builder.publishpopup.subdomain')| lang }} </md-radio-button>
+			  <md-radio-button value="0">  {{('builder.publishpopup.custom_domain')| lang }}  </md-radio-button>
+			</md-radio-group>
+			</md-input-container>
+			<div class="md-block" ng-hide="data.subdomain == 0">
+				<label> {{('builder.publishpopup.entry_subdomain_name')| lang }} </label>
+				<div class="input-group">
+				<input ng-model="data.name" required name="name" class="form-control">
+				<span class="input-group-append">{{main_domain}}</span>
+				</div>
+				<div ng-messages="form.name.$error">
+				  <div class="error" ng-message="uniqued">{{error}}</div>
+				</div>
+				
+			</div>
+			<md-input-container class="md-block" ng-hide="data.subdomain == 1">
+				<label> {{('builder.publishpopup.entry_domain_name')| lang }} </label>
+				<input ng-model="data.name" required flex="80" name="name">
+				<div ng-messages="form.name.$error">
+				  <div class="error" ng-message="uniqued">{{error}}</div>
+				</div>
+				<p> {{('builder.publishpopup.custom_domain_instruction')| lang }} </p>
+			</md-input-container>
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		<span flex></span>
+		<md-button type="submit">
+			 {{('builder.ok')| lang }} 
+		</md-button>
+		<md-button ng-click="$dismiss()">
+         {{('builder.cancel')| lang }} 
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+

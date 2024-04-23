@@ -1,0 +1,19 @@
+<collapsible-item item-title="{{'formmodule.input_masks.title' | lang}}" initially-open="true" ng-show="field_type=='text'">
+	<div class="form-group">
+		<label>{{'formmodule.input_masks.mask_entry' | lang}}</label>(<a href="{{'formmodule.input_masks.input_mask_help_url' | lang}}" target="_blank">?</a>)
+		<input type="text" ng-model="data.masks.mask" class="form-control" ng-change="changeData(false)"/>
+	</div>
+	
+	<div class="form-group">
+		<label>{{'formmodule.input_masks.mask_trim_zeros' | lang}}</label>
+		<input type="text" ng-model="data.masks.mask_trim_zeros" class="form-control" ng-change="changeData(false)"/>
+	</div>
+	<div class="form-group">
+		<label>{{'formmodule.input_masks.mask_output' | lang}}</label>
+		<md-select ng-model="data.masks.mask_output" ng-change="changeData(false)">
+			<md-option value="raw">Raw</md-option>
+			<md-option value="alphanumeric">Alphanumeric</md-option>
+		</md-select>
+	</div>
+	
+</collapsible-item>

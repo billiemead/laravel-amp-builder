@@ -1,0 +1,46 @@
+
+
+<div class="modal-header" header-draggable>
+<button class="close" ng-click="$close()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+<h4 class="modal-title title">LBL_BROWSE_FTP_SERVER</h4>
+</div>
+<div class="modal-body" fix-body-height>
+	 <div class="row im-toolbar">
+   		<div class="col-md-6">
+        	<div class="top_bar">
+                <div class="input-group">
+					<div class="input-group-addon">
+						<i class="fa fa-search"></i>
+					</div>
+                	<input type="text" class="form-control" ng-model="searchPhrase" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+        	<div class="button-group pull-right">
+				<button class="btn btn-primary" ng-click="newFolder(currentFolderObj)"><i class="fa fa-plus"></i><i class="fa fa-folder"></i>New Folder</button>
+				<button class="btn btn-primary" ng-hide="maxUploadSize >=0 && maxUploadSize <= uploadSize" ng-click="openUploader()"><i class="fa fa-upload"></i>Upload</button>
+			</div>
+        </div>
+   </div>
+   <div class="row">
+        
+        <div class="col-md-8">
+            <div class="filist row">
+               <div class="item folder_item"  ng-repeat="folder in inner_folders" ng-dblclick="openFolder(folder)" ng-click="selectFolder(folder,$index)" ng-class="{selected:folder.selected}">
+                    <div class="thumb" >
+                        <a href="javascript:void(0);"></a>
+                        
+                    </div>
+					<div class="fi_name">@{{folder.name}}</div>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+</div></div>
+
+<div class="modal-footer">
+	<button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" ng-click="$dismiss()">Cancel</button>
+</div>

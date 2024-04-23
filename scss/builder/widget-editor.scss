@@ -1,0 +1,203 @@
+$border: 1px solid #ccc;
+$corner:2px;
+$min_height:30px;
+$text_color:#343a40;
+$font_size:13px;
+widget-style-select,widget-style-font{
+	> div{
+		border: $border;
+		border-radius: $corner; 
+		min-height:$min_height;
+	}
+	
+	md-select, md-select:focus{
+		margin:0;
+		font-size:$font_size;
+		.md-select-icon,md-select-value.md-select-placeholder, md-select-value{
+			color:inherit !important;
+		}
+		.md-select-icon{
+			color:inherit;
+			width:auto !important;
+			&:after{
+				font-size:8px;
+			}
+		}
+		.md-select-value{
+			border-bottom:0;
+			min-width:auto !important;
+			padding-bottom:0 !important;
+		}
+		&:focus{
+			.md-select-value{
+				border-bottom:0 !important;
+			}
+		}
+	}
+}
+widget-style-input, widget-style-number{
+	> div{
+		border: $border;
+		border-radius: $corner; 
+		min-height:$min_height;
+		display: grid; 
+		grid-template-columns: 1fr auto; 
+		transform: translate3d(0px, 0px, 0px);
+		color:$text_color;
+		font-size:$font_size;
+		input{
+			padding: 0px 4px 0px 4px; 
+			line-height: 22px; 
+			box-sizing: border-box; 
+			display: block; 
+			width: 100%; 
+			color: inherit; 
+			font-size: inherit; 
+			font-family: inherit; 
+			outline: currentcolor none 0px;
+			border:none;
+			
+		}
+		md-select{
+			outline: currentcolor none 0px; 
+			cursor: default; 
+			user-select: none; 
+			font-size: 9px; 
+			line-height: 12px; 
+			letter-spacing: 0.005em; 
+			text-transform: uppercase; 
+			color: rgb(166, 166, 166); 
+			place-self: stretch; 
+			grid-area: 1 / 2 / 2 / 3; 
+			z-index: 1; 
+			min-width: 16px; 
+			border-radius: 1px; 
+			height: auto; 
+			text-align: center; 
+			border-width: 0px; 
+			margin: 1px; 
+			position: relative; 
+			display: flex; 
+			align-items: center; 
+			justify-content: center; 
+			padding-right: 0px; 
+			padding-left: 0px; 
+			background: transparen;
+			border-style: solid; 
+			border-color: transparent; 
+			box-sizing: border-box;
+			.md-select-icon{
+				color:inherit;
+				width:auto !important;
+				&:after{
+					font-size:8px;
+				}
+			}
+			.md-select-value{
+				border-bottom:0;
+				min-width:auto !important;
+				padding-bottom:0 !important;
+				max-width:100%;
+			}
+			&:focus{
+				.md-select-value{
+					border-bottom:0 !important;
+				}
+			}
+		}
+	}
+
+}
+widget-style-checkbox-item, widget-option{
+	
+	>.md-button{
+		margin:0;
+		min-width:auto;
+		min-height:auto;
+		padding:8px;
+		font-size:10px;
+		line-height:15px;
+		&:hover,&.selected{
+			background:black !important;
+			color:white !important;
+		}
+		md-icon{
+			color:inherit !important;
+			min-height:auto;
+			min-width:auto;
+			width:15px;
+			height:15px;
+		}
+	}
+}
+widget-style-slider
+{
+	md-slider-container{
+		widget-style-input,widget-style-number
+		{
+			max-width:none !important;
+		}
+	}
+}
+widget-style-label
+{
+	display: flex;
+	align-items: center;
+	i{
+		font-size:14px;
+		cursor:pointer;
+	}
+	a{
+		cursor:pointer;
+		background:#ddd;
+		
+	}
+}
+widget-style-color
+{
+	>.widget-style-input{
+		border: $border;
+		border-radius: $corner; 
+		min-height:$min_height;
+		display: flex;
+		color:$text_color;
+		position:relative;
+		input{
+		
+			padding: 0px 0px 0px 40px; 
+			line-height: 22px; 
+			box-sizing: border-box; 
+			display: block; 
+			width: 100%; 
+			color: inherit; 
+			font-size: inherit; 
+			font-family: inherit; 
+			outline: currentcolor none 0px;
+			border:none;
+			height: 100%;	
+		}
+		button{
+			position:absolute;
+			height: 100%;
+			padding: 0;
+		}
+	}
+	
+}
+widget-style-label
+{
+	&[el-style="text-shadow"], &[el-style="box-shadow"], &[el-style="margin"], &[el-style="padding"], &[el-style="border-radius"]{
+		display:inline;
+	}
+}
+widget-style-margin,widget-style-corner
+{
+	widget-radio{
+		display:inline-block;
+	}
+}
+widget-style-text-shadow{
+	> button{
+		float:right;
+	}
+}

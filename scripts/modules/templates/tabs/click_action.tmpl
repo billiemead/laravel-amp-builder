@@ -1,0 +1,67 @@
+<collapsible-item item-title="{{'buttonmodule.click_action_title' | lang}}" initially-open="true">
+	<div class="form-group">
+		<label>{{'buttonmodule.action.title' | lang}}</label>
+		<widget-radio ng-model="data.actionType" ng-change="changeData()" style="display:block;margin-bottom:5px;">
+			<widget-option value="none" icon="times" tooltip="{{'buttonmodule.action.none' | lang}}"/>
+			<widget-option value="page" icon="page" tooltip="{{'buttonmodule.action.page' | lang}}"/>
+			<widget-option value="url" icon="link" tooltip="{{'buttonmodule.action.link' | lang}}"/>
+			<widget-option value="popup" icon="popup" tooltip="{{'buttonmodule.action.popup' | lang}}"/>
+			<widget-option value="sidebar" icon="sidebar" tooltip="{{'buttonmodule.action.sidebar' | lang}}"/>
+			<widget-option value="phone" icon="phone" tooltip="{{'buttonmodule.action.phone' | lang}}"/>
+			<widget-option value="email" icon="mail" tooltip="{{'buttonmodule.action.email' | lang}}"/>
+		</widget-radio>
+	</div>
+	<div class="block" ng-show="data.actionType == 'url'">
+		<div class="form-group">
+			<label>{{'buttonmodule.link' | lang}}</label>
+			<input type="text" class="form-control" ng-model="data.href" ng-change="changeData()"/>
+		</div>
+		<div class="form-group">
+			<label></label>
+			<md-checkbox ng-change="changeData()" ng-model="data.newWindow" ng-true-value="'new'" ng-true-value="'same'">{{'buttonmodule.target.title' | lang}}</md-checkbox>
+		</div>
+	</div>
+	<div class="block" ng-show="data.actionType == 'page'">
+		<div class="form-group">
+			<label>{{'buttonmodule.page' | lang}}</label>
+			<select class="form-control" ng-change="changeData()" ng-model="data.page">
+				<option value="{{page.id}}" ng-repeat="page in pages">{{page.name}}</option>
+			</select>
+		</div>
+	
+	</div>
+	<div class="block" ng-show="data.actionType == 'url_popup'">
+		<div class="form-group">
+			<label>{{'buttonmodule.link' | lang}}</label>
+			<input type="text" class="form-control" ng-model="data.href" ng-change="changeData()"/>
+		</div>
+	</div>
+	<div class="block" ng-show="data.actionType == 'email'">
+		<div class="form-group">
+			<label>{{'formmodule.entry_email' | lang}}</label>
+			<input type="text" class="form-control" ng-model="data.email" ng-change="changeData()"/>
+		</div>
+	</div>
+	<div class="block" ng-show="data.actionType == 'phone'">
+		<div class="form-group">
+			<label>{{'buttonmodule.entry_phone' | lang}}</label>
+			<input type="text" class="form-control" ng-model="data.phone" ng-change="changeData()"/>
+		</div>
+	</div>
+	<div class="block" ng-show="data.actionType == 'popup'">
+		<div class="form-group">
+			<label>{{'buttonmodule.entry_popup' | lang}}</label>
+			<select class="form-control" ng-change="changeData()" ng-model="data.popup">
+				<option value="{{popup.id}}" ng-repeat="popup in popups">{{popup.name}}</option>
+			</select>
+		</div>
+	</div>
+	<div class="block" ng-show="data.actionType == 'sidebar'">
+		<div class="form-group">
+			<label>{{'buttonmodule.entry_sidebar' | lang}}</label>
+			<select class="form-control" ng-change="changeData()" ng-model="data.sidebar">
+				<option value="{{popup.id}}" ng-repeat="popup in sidebars">{{popup.name}}</option>
+			</select>
+		</div>
+	</div>
+</collapsible-item>

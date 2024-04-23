@@ -1,0 +1,6 @@
+<md-select ng-change="changePage(currentEditTab)" ng-model="currentEditTab" style="margin:0">
+	<md-option value="main">{{"main_page" | lang}}</md-option>
+	<md-option ng-value="popup.id" ng-repeat="popup in popups">{{popup.name}}</md-option>
+</md-select>
+<md-button ng-click="add_section()" ng-if="currentPageTab == 'main'">{{"add_section" | lang}}</md-button>
+<md-button ng-click="add_popup()">{{"add_popup" | lang}}</md-button>

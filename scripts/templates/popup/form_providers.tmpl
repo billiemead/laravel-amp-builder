@@ -1,0 +1,35 @@
+<md-dialog rc-drag="md-toolbar" aria-label="{{('formmodule.choose_another_provider')| lang }} ">
+	<form ng-cloak ng-submit="ok()" name="form">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{('formmodule.choose_another_provider')| lang }}</h2>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <i class="fa fa-times" aria-label="Close dialog"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<md-list flex>
+				<md-list-item ng-repeat="(key,value) in providers" ng-click="openIntegrationDialog(key)">
+					<img class="md-avatar" src="{{basePath}}/assets/images/integrations/{{key}}.png" ng-if="!value.logo">
+					<img class="md-avatar" ng-src="{{value.logo}}" ng-if="value.logo.length">
+					{{value.display_name}}
+					<md-tooltip>{{value.display_name}}</md-tooltip>
+				</md-list-item>
+			</md-list>
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		<span flex></span>
+		 <md-button type="submit">
+         {{('builder.ok')| lang }} 
+      </md-button>
+      <md-button ng-click="$dismiss()">
+         {{('builder.close')| lang }} 
+      </md-button>
+    </md-dialog-actions>
+  </form>
+	</md-dialog>

@@ -1,0 +1,11 @@
+body[template-type="popup"] amp-sidebar
+{
+	transform:none;
+	animation-name:unset;
+	display:inline-block !important;
+}
+
+body[template-type="popup"] amp-lightbox
+{
+	display:inline-block !important;
+}

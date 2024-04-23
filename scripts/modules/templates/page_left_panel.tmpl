@@ -1,0 +1,6 @@
+<div tree-view ng-model="tree_layers" selected="layer_selected" class="tree-layers"  ng-show="show_layer"></div>
+<div class="tree-layers-expander" ng-click="show_layer=!show_layer">
+	<i class="fa fa-caret-left" ng-if="show_layer"></i>
+	<i class="fa fa-caret-right" ng-if="!show_layer"></i>
+</div>
+<div left-panel></div>

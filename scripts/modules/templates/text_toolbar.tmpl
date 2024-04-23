@@ -1,0 +1,118 @@
+<div class="" id="quill-toolbar">
+	<div class="row form-group">
+		<div class="col-md-4">
+			<label>{{'textmodule.text_toolbar.entry_heading' | lang }}</label>
+		</div>
+		<div class="col-md-8">
+			<select class="ql-header form-control">
+				<option selected="">{{'textmodule.text_toolbar.heading.normal' | lang }}</option>
+				<option value="1">{{'textmodule.text_toolbar.heading.1' | lang }}</option>
+				<option value="2">{{'textmodule.text_toolbar.heading.2' | lang }}</option>
+				<option value="3">{{'textmodule.text_toolbar.heading.3' | lang }}</option>
+				<option value="4">{{'textmodule.text_toolbar.heading.4' | lang }}</option>
+				<option value="5">{{'textmodule.text_toolbar.heading.5' | lang }}</option>
+				<option value="6">{{'textmodule.text_toolbar.heading.6' | lang }}</option>
+			</select>
+		</div>
+	</div>
+	
+	<div class="row form-group">
+		<div class="col-md-4">
+			<label>{{'textmodule.text_toolbar.entry_font_size' | lang }}</label>
+		</div>
+		<div class="col-md-8">
+			<select class="ql-size form-control">
+				<option selected=""></option>
+				<option value="{{$index + 1}}" ng-repeat="a in range(72) track by $index">{{$index + 1}}px</option>
+			</select>
+		</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-md-4">
+			<label>{{'textmodule.text_toolbar.entry_color' | lang }}</label>
+		</div>
+		<div class="col-md-8">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<button class="btn btn-color-picker ql-color"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-md-4">
+			<label>{{'textmodule.text_toolbar.entry_background' | lang }}</label>
+		</div>
+		<div class="col-md-8">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<button class="btn btn-color-picker ql-background"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-md-4">
+			<label>{{'textmodule.text_toolbar.entry_style' | lang }}</label>
+		</div>
+		<div class="col-md-8">
+			<span class="ql-formats">
+				<button class="ql-bold"></button>
+				<button class="ql-italic"></button>
+				<button class="ql-underline"></button>
+				<button class="ql-strike"></button>
+				
+			</span>
+		</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-md-4">
+			<label>{{'textmodule.text_toolbar.entry_list' | lang }}</label>
+		</div>
+		<div class="col-md-8">
+			<span class="ql-formats">
+			<button class="ql-list" value="ordered"></button>
+			<button class="ql-list" value="bullet"></button>
+			</span>
+		</div>
+	</div>
+	<div class="row form-group">
+		
+	</div>
+
+	<div class="row form-group">
+		<div class="col-md-4">
+			<label>{{'textmodule.text_toolbar.entry_transform' | lang }}</label>
+		</div>
+		<div class="col-md-8">
+			<select class="ql-transform form-control">
+				<option selected="">{{'textmodule.text_toolbar.text_transform.normal' | lang }}</option>
+				<option value="uppercase">{{'textmodule.text_toolbar.text_transform.uppercase' | lang }}</option>
+				<option value="capitalize">{{'textmodule.text_toolbar.text_transform.capitalize' | lang }}</option>
+				<option value="lowercase">{{'textmodule.text_toolbar.text_transform.lowercase' | lang }}</option>
+			</select>
+			<button class="ql-transform" value=""></button>
+			<button class="ql-transform" value="uppercase"></button>
+			<button class="ql-transform" value="capitalize"></button>
+			<button class="ql-transform" value="lowercase"></button>
+		</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-md-4">
+			<label>{{'textmodule.text_toolbar.entry_action' | lang }}</label>
+		</div>
+		<div class="col-md-8">
+			<button class="ql-link"></button>
+			<button class="ql-dynamic" ng-if="features.dynamic">Dynamic Text</button>
+		</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-8">
+			<button class="ql-dynamicheadline" ng-if="features.dynamicheadline">{{'animated_text' | lang }}</button>
+			<button class="ql-animatenumber" ng-if="features.animatenumber">{{'animated_number' | lang }}</button>
+		</div>
+	</div>
+</div>
+

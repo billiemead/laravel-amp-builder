@@ -1,0 +1,16 @@
+.ms-navigation .nav-item.active, #top-header-bg{
+	background:'{{primary-500}}' !important;
+}
+.content-wrapper > ui-view .box
+{
+	background:'{{background-50}}' !important;
+}
+.md-warn{
+	color:'{{warn-500}}' !important;
+}
+md-steppers .fa-check-circle{
+	color:'{{primary-500}}' !important;
+}
+md-steppers .fa-exclamation-circle{
+	color:'{{warn-500}}' !important;
+}

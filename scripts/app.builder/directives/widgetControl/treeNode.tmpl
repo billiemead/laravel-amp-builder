@@ -1,0 +1,10 @@
+<ul {{options.ulClass}} >
+<li ng-repeat="node in node.{{options.nodeChildren}} | filter:filterExpression:filterComparator {{options.orderBy}}" id="tree-node-\{\{node.id\}\}" ng-show="!node.deleted" ng-class="headClass(node)" {{options.liClass}} set-node-to-data>
+<div class="node node-depth-\{\{node.depth\}\}"  ng-class="[selectedClass(), unselectableClass()]" style="padding-left:\{\{node.depth * 10\}\}px">
+<i class="tree-branch-head" ng-class="iBranchClass()" ng-click="selectNodeHead(node)"></i>
+<i class="tree-leaf-head {{options.iLeafClass}}"></i>
+<div class="tree-label {{options.labelClass}}" ng-class="[selectedClass(), unselectableClass()]" ng-click="selectNodeLabel(node)" tree-transclude></div>
+</div>
+<treeitem ng-if="nodeExpanded()"></treeitem>
+</li>
+</ul>

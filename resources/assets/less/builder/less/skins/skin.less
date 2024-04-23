@@ -1,0 +1,58 @@
+/*
+ * Skin: Blue
+ * ----------
+ */
+@import "../../bootstrap-less/mixins.less";
+@import "../../bootstrap-less/variables.less";
+@import "../_variables.less";
+@import "../variables.less";
+@import "../mixins.less";
+
+  //Navbar
+  .main-header {
+    .navbar {
+      .navbar-variant(@color-primary; #fff);
+      .sidebar-toggle {
+        color: #fff;
+        &:hover {
+          background-color: darken(@color-primary, 5%);
+        }
+      }
+      @media (max-width: @screen-header-collapse) {
+        .dropdown-menu {
+          li {
+            &.divider {
+              background-color: rgba(255, 255, 255, 0.1);
+            }
+            a {
+              color: #fff;
+              &:hover {
+                background: darken(@color-primary, 5%);
+              }
+            }
+          }
+        }
+      }
+    }
+    //Logo
+    .logo {
+      .logo-variant(darken(@color-primary, 5%));
+    }
+
+    li.user-header {
+      background-color: @color-primary;
+    }
+  }
+
+  //Content Header
+  .content-header {
+    background: transparent;
+  }
+
+  //Create the sidebar skin
+  .skin-dark-sidebar(@color-primary);
+
+
+.layout-top-nav .main-header > .logo {
+  .logo-variant(@color-primary);
+}

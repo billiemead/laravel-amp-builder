@@ -1,0 +1,8 @@
+<div class="widget-style-input">
+<input autocomplete="off" name="width" placeholder="{{vm.value}}" ng-model="vm.value" ng-change="vm.onchange()" ng-model-options="{ debounce: 500 }">
+<md-select ng-model="vm.unit" ng-change="vm.onchange()" tabindex="-1" ng-if="vm.unit_list.length">
+	<md-option ng-repeat="unit in vm.unit_list" ng-value="unit">
+		  {{unit}}
+	</md-option>
+</md-select>
+</div>

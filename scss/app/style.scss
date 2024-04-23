@@ -1,0 +1,46 @@
+@import 'common';
+
+@import 'animated/animate';
+@import 'animated/headline';
+
+@import 'jquery.mb.vimeo_player/jquery.mb.vimeo_player.min';
+@import 'jquery.mb.YTPlayer/jquery.mb.YTPlayer';
+@import '../../node_modules/jquery-modal/jquery.modal';
+.jquery-modal.blocker
+{
+	z-index:100001;
+}
+.modal{
+	.modal-dialog,.modal-content,.modal-body{
+		width:100%;
+		height:100%;
+	}
+	.modal-title
+	{
+		margin:0;
+	}
+	a.close-modal{
+		border: 2px solid white;
+		border-radius: 50%;
+	}
+	
+}
+.modal.iframe-modal{
+	padding:0;
+	max-width:840px;
+	height: 92%;
+	.modal-dialog
+	{
+		overflow:hidden;
+	}
+	iframe{
+		width:100%;
+		height:100%;
+		border:0;
+	}
+}
+.tooltip{
+	background:black;
+	color:white;
+	z-index:2;
+}

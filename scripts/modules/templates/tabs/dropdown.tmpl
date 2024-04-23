@@ -1,0 +1,13 @@
+<collapsible-item item-title="Values" initially-open="true">
+	<div class="form-group">
+		<label>{{'formmodule.entry_name' | lang}}</label>
+		<input type="text" class="form-control" ng-model="data.name" ng-change="changeData()"/>
+	</div>
+	<div class="form-group">
+		<label>{{'formmodule.entry_values' | lang }}</label>
+		
+		<textarea class="form-control" ng-model="d.values_string"></textarea>
+		<p>{{'formmodule.entry_values_description' | lang}}</p>
+	</div>
+	<md-button ng-click="changeValues()">Update</md-button>
+</collapsible-item>

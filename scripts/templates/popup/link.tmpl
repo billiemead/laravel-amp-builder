@@ -1,0 +1,41 @@
+<md-dialog rc-drag="md-toolbar" aria-label=" {{('builder.linkpopup.title')| lang }} " flex="66" class="md-code-popup">
+  <form ng-cloak ng-submit="ok()">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2> {{('builder.linkpopup.title')| lang }} </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <i class="fa fa-times" aria-label="Close dialog"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+		<div class="md-dialog-content">
+			<md-input-container class="md-block">
+				<label> {{('builder.linkpopup.text')| lang }} </label>
+				<input ng-model="data.text" required >
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label> {{('builder.linkpopup.link')| lang }} </label>
+				<input ng-model="data.link" required >
+			</md-input-container>
+			
+			<md-checkbox class="md-block" ng-model="data.new_tab">
+				<label> {{('builder.linkpopup.new_tab')| lang }} </label>
+			</md-checkbox>
+		</div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+     
+      <span flex></span>
+      <md-button type="submit">
+        {{('builder.ok')| lang }} 
+      </md-button>
+      <md-button ng-click="$dismiss()">
+         {{('builder.cancel')| lang }} 
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

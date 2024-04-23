@@ -1,0 +1,19 @@
+<collapsible-item item-title="Input" initially-open="true">
+	<div class="form-group">
+		<label>{{'formmodule.entry_name' | lang}}</label>
+		<input type="text" class="form-control" ng-model="data.name" ng-change="changeData()"/>
+	</div>
+	<div class="form-group">
+		<label>{{'formmodule.entry_placeholder' | lang}}</label>
+		<input type="text" class="form-control" ng-model="data.placeholder" ng-change="changeData()"/>
+	</div>
+	<div class="form-group">
+		<label>{{'formmodule.validations.maxlength' | lang}}</label>
+		<input type="text" class="form-control" ng-model="data.maxlength" ng-change="changeData()"/>
+	</div>
+	<div class="form-group">
+		<label>{{'formmodule.validations.minlength' | lang}}</label>
+		<input type="text" class="form-control" ng-model="data.minlength" ng-change="changeData()"/>
+	</div>
+	
+</collapsible-item>

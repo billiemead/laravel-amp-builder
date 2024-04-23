@@ -1,0 +1,22 @@
+<div class="modal-header" header-draggable>
+<button class="close" ng-click="close()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+<h4 class="modal-title title">LBL_PROFILE_POPUP_DIALOG</h4>
+</div>
+<div class="modal-body" fix-body-height>
+	    <div class="block">
+        <div class="form-group">
+            <label class="control-label">LBL_COUNTRIES_NAME</label>
+            <div class="controls"><input type="text" class="form-control required" name="name" value="Administrator" /></div>
+        </div>
+        <div class="form-group">
+            <label class="control-label">LBL_CUSTOMER_EMAIL</label>
+            <div class="controls"><input type="text" class="form-control required" name="email" value="" disabled="disabled" /></div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="modal-footer">
+	<button class="btn btn-primary" ng-click="save()">Save</button>
+    <button class="btn btn-danger" ng-click="close()">Close</button>
+</div>

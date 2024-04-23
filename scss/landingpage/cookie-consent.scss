@@ -1,0 +1,13 @@
+.js-cookie-consent.cookie-consent{
+	position:fixed;
+	width:100%;
+	bottom:0;
+	background:black;
+	color:white;
+	text-align:center;
+	padding:10px 0;
+	.cookie-consent__message{
+	}
+	.js-cookie-consent-agree.cookie-consent__agree{
+	}
+}

@@ -1,0 +1,32 @@
+<md-dialog rc-drag="md-toolbar" aria-label=" {{('builder.htmleditor.title')| lang }} " flex="66" class="md-code-popup">
+  <form ng-cloak ng-submit="ok()">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2> {{('builder.htmleditor.title')| lang }} </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <i class="fa fa-times" aria-label="Close dialog"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+		<div class="error">
+		{{error}}
+		</div>
+        <textarea ng-model="data" class="form-control" rows="5" ui-ace="aceOption">
+		</textarea>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+     
+      <span flex></span>
+      <md-button type="submit">
+        {{('builder.ok')| lang }} 
+      </md-button>
+      <md-button ng-click="$dismiss()">
+         {{('builder.cancel')| lang }} 
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

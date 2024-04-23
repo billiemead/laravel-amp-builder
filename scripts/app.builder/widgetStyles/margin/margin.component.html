@@ -1,0 +1,26 @@
+<widget-radio ng-value="vm.allMode" on-update="vm.updateMode(value)">
+	<widget-option ng-value="true" text="All"/>
+	<widget-option ng-value="false" text="individual"/>
+</widget-radio>
+<div class="widget-style-margin-box" style="display:flex;margin-top:5px;">
+	<widget-style-slider min=0 max=255 el-style="{{vm.style}}" ng-value="vm.value_all" on-update="vm.updateItems(value)" ng-show="vm.allMode"/>
+
+	<div ng-show="!vm.allMode" style="display:flex">
+		<div class="">
+			<widget-style-number el-style="{{vm.style}}" ng-value="vm.value.top" on-update="vm.updateItem('top', value)"/>
+			<div class="text-center">Top</div>
+		</div>
+		<div class="">
+			<widget-style-number el-style="{{vm.style}}" ng-value="vm.value.left" on-update="vm.updateItem('left', value)"/>
+			<div class="text-center">Left</div>
+		</div>
+		<div class="">
+			<widget-style-number el-style="{{vm.style}}" ng-value="vm.value.bottom" on-update="vm.updateItem('bottom', value)"/>
+			<div class="text-center">Bottom</div>
+		</div>
+		<div class="">
+			<widget-style-number el-style="{{vm.style}}" ng-value="vm.value.right" on-update="vm.updateItem('right', value)"/>
+			<div class="text-center">Right</div>
+		</div>
+	</div>
+</div>

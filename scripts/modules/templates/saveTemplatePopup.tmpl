@@ -1,0 +1,37 @@
+<md-dialog rc-drag="md-toolbar" aria-label="Video">
+	<form ng-cloak ng-submit="ok()" name="form">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2> Save Template </h2>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <i class="fa fa-times" aria-label="Close dialog"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<md-input-container class="md-block">
+				<label> Name </label>
+				<input ng-model="data.name" required >
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label> {{('category')| lang }} </label>
+				<md-select ng-model="data.category" required>
+					<md-option ng-repeat="theme_category in theme_categories" value="{{theme_category.id}}">{{theme_category.title}}</md-option>
+				</md-select>
+			</md-input-container>
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		<span flex></span>
+		 <md-button type="submit">
+         {{('builder.ok')| lang }} 
+      </md-button>
+      <md-button ng-click="$dismiss()">
+         {{('builder.close')| lang }} 
+      </md-button>
+    </md-dialog-actions>
+  </form>
+	</md-dialog>

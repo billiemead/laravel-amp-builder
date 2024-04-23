@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Widgets;
+
+use Arrilot\Widgets\AbstractWidget;
+
+class {{class}} extends BaseWidget
+{
+    /**
+     * The configuration array.
+     *
+     * @var array
+     */
+    protected $config = [];
+	protected $view = '{{view}}';
+   
+}

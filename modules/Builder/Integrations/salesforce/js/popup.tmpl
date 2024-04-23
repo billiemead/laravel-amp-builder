@@ -1,0 +1,71 @@
+<md-dialog rc-drag="md-toolbar" aria-label="Salesforce" flex="50">
+	<form ng-submit="ok()" name="form" ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Salesforce</h2>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <md-icon class="fa fa-times" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<div ng-show="accounts.length==0">
+				<md-button ng-click="openOauthDialog()" class="md-raised md-secondary">{{'add_account' | lang}}</md-button>
+			</div>
+			<div ng-show="accounts.length">
+				<md-input-container class="md-block">
+					<label>Account</label>
+					<md-select required ng-model="data.account" ng-change="changeAccount()">
+						<md-option ng-repeat="account in accounts" value="{{account.id}}">{{account.account_name}}</md-option>
+					</md-select>
+				</md-input-container>
+				<md-input-container class="md-block">
+					<label>Campaign</label>
+					<md-select required ng-model="data.list">
+						<md-option ng-repeat="item in list" value="{{item.id}}">{{item.name}}</md-option>
+					</md-select>
+				</md-input-container>
+				
+			</div>
+			<div ng-show="data.list.length" class="field-mappings">
+				<h3 class="title">Fields Mapping</h3>
+				<div layout="column">
+					<div class="field-mapping-row" layout="row">
+						<div flex="40">Salesforce Fields</div>
+						<div flex="60">Form Fields</div>
+					</div>
+				</div>
+				<div layout="column">
+					<div class="field-mapping-row" layout="row" ng-repeat="(key,value) in mapping_fields" ng-if="key!='merge_fields' && value.type != 'default_value' && value.name.length">
+						<div flex="40">{{value.name}}</div>
+						<div flex="60">
+							<select class="form-control" ng-required ="value.required" ng-model="data.fields[key]">
+								<option value=""></option>
+								<option ng-repeat="field in fieldList" value="{{field.name}}">{{field.display_name}}</option>
+							</select>
+						</div>
+					</div>
+					<div class="field-mapping-row" layout="row" ng-repeat="(key,value) in mapping_fields.merge_fields">
+						<div flex="40">{{value.name}}</div>
+						<div flex="60">
+							<select class="form-control" ng-required ="value.required" ng-model="data.fields.merge_fields[key]">
+								<option value=""></option>
+								<option ng-repeat="field in fieldList" value="{{field.name}}">{{field.display_name}}</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		<md-button ng-click="openOauthDialog()" ng-show="accounts.length" class="md-raised md-secondary">{{'add_more_account' | lang}}</md-button>
+		<span flex></span>
+		<md-button type="submit" class="md-raised md-primary" ng-show="accounts.length" ng-disabled="disable_submit">{{'ok' | lang}}</md-button>
+		<md-button ng-click="$dismiss()">{{'cancel' | lang}}</md-button>
+    </md-dialog-actions>
+  </form>
+	</md-dialog>

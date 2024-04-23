@@ -1,0 +1,5 @@
+<md-slider-container>
+  <md-slider min="{{vm.min}}" max="{{vm.max}}" ng-model="vm.value_number" aria-label="red" class="md-warn" ng-change="vm.updateSlider()">
+  </md-slider>
+<widget-style-number el-style="{{vm.style}}" ng-value="vm.value" on-update="vm.updateInput(value)" />
+</md-slider-container>

@@ -1,0 +1,1 @@
+<input type="hidden" name="{{$widget->getPage_id()}}" value="{{$widget->getDataValue()}}"/>

@@ -1,0 +1,28 @@
+<md-content flex  style="min-width:200px;" hide show-md show-gt-md>
+	<md-tabs md-selected="data.selected" md-dynamic-height>
+		<md-tab label="{{'widget' | lang}}">
+			<div class="add_blocks_wrapper">	
+				<div fix-height-element style="overflow:auto;" class="add_blocks">
+					<ang-accordion editor-tabs="enabled_tabs" close-icon-class="fa fa-angle-up" open-icon-class="fa fa-angle-down">
+						<collapsible-item item-title="{{category}}" initially-open="true" ng-repeat="(category, tool) in tools">
+							<md-list flex>
+								<md-list-item class="md-1-line" ng-repeat="(name, value) in tool">
+									<div float-widget-module widget-type="{{name}}" layout="row"> 
+										<md-icon md-svg-icon="module:{{name}}"></md-icon>
+										<div class="md-list-item-text" layout="column">
+											<p>{{ value.name }}</p>
+										</div>
+									</div>
+								</md-list-item>
+							</md-list>
+						</collapsible-item>
+					</ang-accordion>
+					
+				</div>
+			</div>
+		</md-tab>
+		
+		
+	</md-tabs>
+	
+</md-content>

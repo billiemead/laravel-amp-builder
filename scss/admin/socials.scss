@@ -1,0 +1,31 @@
+.md-social-button{
+	color:#fff;
+	margin:6px 0;
+	md-icon{
+		color:#fff;
+	}
+	&:hover{
+		color:white;
+	}
+	&.facebook{
+		background-color:#4267b2;
+		&:hover{
+			background-color:#4267b2 !important;
+		}
+	}
+	&.twitter{
+		background-color:#4AB3F4;
+		&:hover{
+			background-color:#4AB3F4 !important;
+		}
+	}
+	&.google{
+		background-color:#dd4b39;
+		&:hover{
+			background-color:#dd4b39 !important;
+		}
+	}
+	&:hover{
+		background-color:inherit;
+	}
+}

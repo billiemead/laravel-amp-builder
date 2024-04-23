@@ -1,0 +1,5 @@
+<treecontrol class="tree-light" tree-model="treedata" expanded-nodes="expandedNodes" options="tree_options" on-selection="doSelect(node)" selected-node="selected">
+	<a href="" class="visible-icon" ng-click="toogleVisible(node, $event)"><i ng-if="node.visible" class="fa fa-eye"></i><i ng-if="!node.visible" class="fa fa-eye-slash"></i></a>
+	<md-icon md-svg-icon="module:{{node.type}}"></md-icon>
+	{{node.label}}
+ </treecontrol>	

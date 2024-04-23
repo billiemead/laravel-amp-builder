@@ -1,0 +1,1 @@
+<label><span>{{$data['text']}}</span></label>

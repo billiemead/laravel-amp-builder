@@ -1,0 +1,5 @@
+<div class="widget-style-input">
+	<button class="btn btn-color-picker" colorpalettepicker ng-model="vm.value" ng-change="vm.onchangeColor()" style="background:{{vm.value.value || vm.value}}">&nbsp</button>
+	<input type="text" class="" value="{{vm.value.value || vm.value}}"/>
+</div>
+<widget-style-slider min=0 max=100 ng-value="vm.opacity" el-style="opacity" ng-if="vm.withOpacity"  on-update="vm.updateColorOpacity(value)"/>

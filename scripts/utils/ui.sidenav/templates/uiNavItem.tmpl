@@ -1,0 +1,7 @@
+<div ng-class="{active: active, disabled: disabled}" class="nav-item">
+	<a href="{{url}}" class="md-button" ui-nav-item-heading-transclude><i class="{{headingIcon}}"></i><span>{{heading}}</span>
+		<i class="fa fa-angle-down" ng-if="hasChildMenu && active"></i>
+	</a>
+	<div class="child-items" ui-nav-subitem-transclude>
+	</div>
+</div>

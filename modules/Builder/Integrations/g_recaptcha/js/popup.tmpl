@@ -1,0 +1,37 @@
+<md-dialog  rc-drag="md-toolbar" aria-label="Google Recaptcha" flex="50">
+	<form ng-submit="ok()" name="form" ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Google Recaptcha</h2>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <md-icon class="fa fa-times" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<div ng-show="!accounts.length">
+				<md-button ng-click="addAccount()" class="md-raised md-secondary">{{'add_account' | lang}}</md-button>
+			</div>
+			<div ng-show="accounts.length">
+				<md-button ng-click="addAccount()" class="md-raised md-secondary">{{'add_account' | lang}}</md-button>
+				<md-input-container class="md-block">
+					<label>List</label>
+					<md-select required ng-model="data.account">
+						<md-option ng-repeat="account in accounts" value="{{account.id}}">{{account.account_name}}</md-option>
+					</md-select>
+				</md-input-container>
+			</div>
+			
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		<md-button ng-click="addAccount()" ng-show="accounts.length" class="md-raised md-secondary">{{'add_more_account' | lang}}</md-button>
+		<span flex></span>
+		<md-button type="submit" class="md-raised md-primary" ng-show="accounts.length">{{'ok' | lang}}</md-button>
+		<md-button ng-click="$dismiss()">{{'cancel' | lang}}</md-button>
+    </md-dialog-actions>
+  </form>
+	</md-dialog>

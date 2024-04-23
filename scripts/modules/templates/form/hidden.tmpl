@@ -1,0 +1,43 @@
+<md-dialog rc-drag="md-toolbar" aria-label="Hidden Field">
+	<form ng-cloak ng-submit="ok()" name="form">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{'formmodule.hidden_popup.title' | lang}}</h2>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <i class="fa fa-times" aria-label="Close dialog"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<md-input-container class="md-block">
+				<label>{{'formmodule.hidden_popup.entry_name' | lang}}</label>
+				<input type="text" ng-model="data.name" required>
+			</md-input-container>
+			<div class="md-block">
+				<label>{{'formmodule.hidden_popup.entry_source' | lang}}</label>
+				<md-select ng-model="data.source" required>
+					<md-option value="default">{{'formmodule.hidden_popup.source_default' | lang}}</md-option>
+					<md-option value="get">{{'formmodule.hidden_popup.source_get' | lang}}</md-option>
+					<md-option value="cookie">{{'formmodule.hidden_popup.source_cookie' | lang}}</md-option>
+				</md-select>
+			</div>
+			<md-input-container class="md-block">
+				<label>{{'formmodule.hidden_popup.entry_value' | lang}}</label>
+				<input type="text" ng-model="data.value" required>
+			</md-input-container>
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		<span flex></span>
+		 <md-button type="submit">
+         {{('builder.ok')| lang }} 
+      </md-button>
+      <md-button ng-click="$dismiss()">
+         {{('builder.close')| lang }} 
+      </md-button>
+    </md-dialog-actions>
+  </form>
+	</md-dialog>

@@ -1,0 +1,30 @@
+<div id="module-text-editor" class="ww_module_info animated fadeIn">
+	<div id="module-text-editor-buttons" class="btn-group">
+		<button class="btn btn-primary" ng-click="wrapSpan('strong')" ng-h="!currentRange.collapsed">
+			<i class="fa fa-bold"></i>
+			<md-tooltip>Bold</md-tooltip>
+		</button>
+		<button class="btn btn-primary" ng-click="wrapSpan('em')" ng-show="!currentRange.collapsed">
+			<i class="fa fa-italic"></i>
+			<md-tooltip>Italic</md-tooltip>
+		</button>
+		<button class="btn btn-primary" ng-click="changeColor()" ng-show="currentRange.collapsed">
+			<i class="fa fa-font"></i>
+		</button>
+		<button class="btn btn-primary" ng-click="changeBackground()" ng-show="currentRange.collapsed">
+		<i class="fa fa-fill"></i>
+		</button>
+		<button class="btn btn-primary" ng-click="wrapSpan()" ng-show="!currentRange.collapsed">
+			<i class="fa fa-paint-brush"></i>
+			<md-tooltip>Wrap in Span</md-tooltip>
+		</button>
+		<button class="btn btn-primary" ng-click="insertIcon()">
+			<i class="fa fa-icons"></i>
+			<md-tooltip>Insert Icon</md-tooltip>
+		</button>
+		<button class="btn btn-primary" ng-click="clearFormat()">
+			<i class="fa fa-remove-format"></i>
+			<md-tooltip>Remove Format</md-tooltip>
+		</button>
+	</div>
+</div>

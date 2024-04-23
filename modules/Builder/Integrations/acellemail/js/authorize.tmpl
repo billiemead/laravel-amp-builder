@@ -1,0 +1,41 @@
+<md-dialog rc-drag="md-toolbar" aria-label="Acellemail" flex="50">
+	<form ng-submit="ok()" name="form" ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Acellemail</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <md-icon class="fa fa-times" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<div>
+				<md-input-container class="md-block">
+					<label>Acellemail Name</label>
+					<input type="text" ng-model="name" required>
+					<p>Display name for this API, can use any name</p>
+				</md-input-container>
+				<md-input-container class="md-block">
+					<label>Acellemail API URL</label>
+					<input type="text" ng-model="api_url" required>
+				</md-input-container>
+				<md-input-container class="md-block">
+					<label>Acellemail API Token</label>
+					<input type="text" ng-model="api_token" required>
+				</md-input-container>
+			
+				<p ng-bind-html="'formmodule.acellemail_api_help' | lang"></p>
+			</div>
+			
+			
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		<span flex></span>
+		<md-button type="submit" class="md-raised md-primary">{{'authorize' | lang}}</md-button>
+		<md-button ng-click="$dismiss()">{{'cancel' | lang}}</md-button>
+    </md-dialog-actions>
+  </form>
+	</md-dialog>

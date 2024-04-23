@@ -1,0 +1,25 @@
+.input-group
+{
+	>.form-control{
+		border:none;
+		&:focus{
+			box-shadow:none;
+		}
+	}
+	border:1px solid #ced4da;
+	&:focus{
+		box-shadow:0 0 0 .2rem rgba(0,123,255,0.25);
+	}
+	.input-group-prepend, .input-group-append
+	{
+		align-items: center;
+		.input-group-text{
+			background:none;
+			color:inherit;
+			border:none;
+		}
+	}
+}
+.breadcrumb{
+	background:none;
+}

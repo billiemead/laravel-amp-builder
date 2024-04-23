@@ -1,0 +1,13 @@
+<collapsible-item item-title="{{'linkblockmodule.additional_fields_tab.title' | lang}}" initially-open="true">
+	<md-list flex class="add_blocks">
+		<md-list-item class="md-1-line" ng-repeat="(name, value) in additional_fields">
+			<div float-widget-module widget-type="{{name}}" layout="row"> 
+				<md-icon md-svg-icon="module:{{name}}"></md-icon>
+				<div class="md-list-item-text" layout="column">
+					<p>{{ value.name }}</p>
+				</div>
+			</div>
+		</md-list-item>
+	</md-list>
+	
+</collapsible-item>

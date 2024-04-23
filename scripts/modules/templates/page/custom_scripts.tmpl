@@ -1,0 +1,37 @@
+<md-dialog rc-drag="md-toolbar" aria-label=" {{('custom_scripts')| lang }} " flex="80">
+	<form ng-cloak ng-submit="ok()">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2> {{('custom_scripts')| lang }} </h2>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <i class="fa fa-times" aria-label="Close dialog"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<md-tabs md-dynamic-height>
+			<md-tab label="Header">
+				<textarea rows="5" ng-model="data.header" class="form-control"></textarea>
+			</md-tab>
+			<md-tab label="Body">
+				<textarea rows="5" ng-model="data.body" class="form-control"></textarea>
+			</md-tab>
+			<md-tab label="Footer">
+				<textarea rows="5" ng-model="data.footer" class="form-control"></textarea>
+			</md-tab>
+		</md-tabs>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		
+    <span flex></span>
+		<md-button type="submit">
+			 {{('builder.ok')| lang }} 
+		</md-button>
+      <md-button ng-click="$dismiss()">
+         {{('builder.cancel')| lang }} 
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

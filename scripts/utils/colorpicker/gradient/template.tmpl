@@ -1,0 +1,32 @@
+<div class="grapick-cont">
+	<div id="grapick">
+		<div class="grp-wrapper" ng-click="addStop($event)" style="position: relative; height: 30px; width: 100%;">
+			<div class="grp-preview" style="background-image: {{preview}}">
+				<div class="grp-handler grp-handler-selected" axis="x" containment="parent" ng-drag-drag="onDragCallback($index,$ui, $event)"  ng-drag="true"  style="position: absolute; top: 0px; left: {{handler.position}}%;" ng-repeat="handler in data.colorStops" ng-click="selectHandler($index, $event)">
+					<div class="grp-handler-close-c" ng-click="removeHander($index, $event)">
+						<div class="grp-handler-close" data-toggle="handler-close">⨯
+						</div>
+					</div>
+					<div class="grp-handler-drag" ng-drag-handle></div>
+					<div class="grp-handler-cp-c" data-toggle="handler-color-c">
+						<div class="grp-handler-cp-wrap" data-toggle="handler-color-wrap" style="background-color: {{handler.color.value || handler.color}}" ng-click="updateHanderColor($index)">
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="inputs">
+		
+
+		<select class="form-control" id="switch-angle" ng-model="data.direction" ng-change="changeType()">
+			<option value="">- Select Direction -</option>
+			<option value="top">Top</option>
+			<option value="right">Right</option>
+			<option value="center">Center</option>
+			<option value="bottom">Bottom</option>
+			<option value="left">Left</option>
+		</select>
+	</div>
+</div>

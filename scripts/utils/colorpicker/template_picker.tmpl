@@ -1,0 +1,36 @@
+<md-dialog rc-drag="md-toolbar" class="color-picker full-color-picker" aria-label="Color picker">
+	 <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h4>Picker</h4>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <i class="fa fa-times" aria-label="Close dialog"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			
+			<div class="picker">
+				<div class="colorValues_container"> 
+					<div style="background-color: {{saturation_color_hex}}" class="colorpicker-saturation" ng-mousedown="onHSBMousedown($event,0)">
+						<div class="shade shade-white"></div>
+						<div class="shade shade-gray"></div>
+					<i style="left: {{cursors_saturation.left}}; top: {{cursors_saturation.top}}"><b></b></i>
+					</div>
+					<div class="colorpicker-hue" ng-mousedown="onHSBMousedown($event,1)"><i style="left: {{cursors_hue.left}}"></i></div>
+					
+				</div>
+				<div class="hex_container">
+					<label>Hex #<input type="text" ng-change="changeHexInput()" class="HexInput" ng-model="color_hex_x"></label>
+				</div>
+				<div class="colorpicker-color" style="background-color: {{color_hex}}"><div /></div>
+			</div>
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		<span flex></span>
+		<md-button class="" ng-click="choosePickerColor()">Choose</md-button> 
+	</md-dialog-actions>
+</md-dialog>

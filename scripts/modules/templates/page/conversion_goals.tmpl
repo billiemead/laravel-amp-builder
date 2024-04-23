@@ -1,0 +1,36 @@
+<md-dialog rc-drag="md-toolbar" aria-label=" {{('analytic')| lang }}" flex="70">
+	<form ng-cloak ng-submit="ok()">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2> {{('conversion_goals')| lang }} </h2>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <i class="fa fa-times" aria-label="Close dialog"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<md-input-container class="md-block">
+				<md-checkbox ng-model="data.form_submission" >{{('builder.pagepopup.form_submission')| lang }}</md-checkbox>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<md-checkbox ng-model="data.link_clicking" >{{('builder.pagepopup.link_clicking')| lang }}</md-checkbox>
+			</md-input-container>
+			
+			
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		
+    <span flex></span>
+		<md-button type="submit">
+			 {{('builder.ok')| lang }} 
+		</md-button>
+      <md-button ng-click="$dismiss()">
+         {{('builder.cancel')| lang }} 
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

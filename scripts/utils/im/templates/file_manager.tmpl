@@ -1,0 +1,192 @@
+  <div class="md-dialog-container">
+<md-dialog class="file_manager-popup" flex="80">
+	<md-toolbar class="_md _md-toolbar-transitions">
+      <div class="md-toolbar-tools">
+        <h2>{{'filemanager.title' | lang}}</h2>
+		
+        <span flex="" class="flex"></span>
+        <button class="md-icon-button md-button md-ink-ripple" type="button"  ng-click="close()">
+          <i class="fa fa-times ng-scope" aria-label="Close dialog"></i>
+        </button>
+      </div>
+    </md-toolbar>
+<md-dialog-content>
+<div class="md-dialog-content">
+<div class="images-panel-content" layout="column" flex>
+	<div class="image-categories" layout="column">
+		<md-nav-bar md-selected-nav-item="current_tab.id">
+			<md-nav-item md-nav-click="changeTab(tab)" name="{{tab.id}}" ng-repeat="tab in tabs">
+				<i class="{{tab.icon}}"></i>{{tab.name}}
+			</md-nav-item>
+			<h2 flex></h2>
+			<div class="" flex>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fa fa-search"></i></span>
+					</div>
+					<input class="form-control" ng-model="searchPhrase" ng-change="popupicon_filterIcons(searchPhrase)">
+				</div>
+			</div>
+			<md-button class="" ng-click="refreshFolder()" ng-hide="!current_tab.url"><i class="fa fa-sync-alt"></i>{{'filemanager.refresh' | lang}}</md-button>
+			<button id="file_manager-upload-button" class="md-button md-raised md-accent" ng-hide="(maxUploadSize >=0 && maxUploadSize <= uploadSize) || !current_tab.upload_url" folder="{{current_folder}}" file-upload-button upload-options="upload_options"><i class="fa fa-upload" ng-hide="!current_tab.upload_url"></i>{{'filemanager.upload' | lang}}</button>
+		</md-nav-bar>
+	</div>
+	<div class="image-category-panel-container">
+		<div class="" ng-show="current_tab.id=='myfiles'" style="height: 100%;" layout="column" flex >
+			<div class="im-toolbar" layout="row">
+				<p flex>{{instructionString}}Each file can be up to </p>
+				
+				<div class="button-group">
+					<md-button class="md-raised md-warn md-icon-button" ng-hide="selectedFiles.length == 0 && selectedFolders.length == 0" class="btn btn-danger" ng-click="delete()" ><i class="fa fa-trash"></i></md-button>
+				</div>
+			</div>
+			<div class="image-list" layout="row" style="overflow: auto;height: 100%;">
+				<div class="folder_list" flex="25">
+					<div class="folist" ng-init="root_folder_index = -1;">
+						<div class="fitem" ng-class="{active:current_folder == ''}">
+						   <div class="fitem_inner" ng-click="openFolder()">
+							   <div class="fitem_bg">
+									<span class="">Default folder</span>
+							   </div>
+						   </div>
+						</div>
+						<div class="fitem" ng-init="root_folder_index=root_folder_index+1;folder_index=root_folder_index; pFolders= (folder)" ng-repeat="folder in folders" ng-class="{active:folder.path == current_folder}">
+						   <a ng-hide="folder.path == current_folder" href="javascript:void(0);" ng-click="deleteFolder(folder, $index)"><i class="fa fa-trash"></i></a>
+						   <div class="fitem_inner" ng-click="openFolder(folder)">
+							   <div class="fitem_bg">
+								  <span class="">{{folder.name}}</span>
+							   </div>
+						   </div>
+						</div>
+						<md-button class="md-primary" ng-click="newFolder(currentFolderObj)"></i>{{'filemanager.new_folder' | lang}}</md-button>
+					</div>
+					
+				</div>
+				<div class="asset_list" flex="75" layout-padding>
+					<md-virtual-repeat-container class="filist">
+						<div class="item-row" md-virtual-repeat="row in files">
+							<div class="item_wrapper" ng-click="selectFile(file,$index)" ng-class="{selected:file.selected}" ng-repeat="file in row | filter:searchPhrase">
+							   <div class="item">
+									<div class="thumb_holder" layout-align="center center">
+										<img ng-src="{{file.thumbnail}}" class="thumb" alt="{{file.name}}">
+									</div>
+										
+								</div>
+								<div class="fi_name">{{file.name}}</div>
+							</div>
+						</div>
+					</md-virtual-repeat-container>
+				</div>
+			</div>
+		</div>
+		<div class="" ng-show="current_tab.id=='libraries' || current_tab.id=='libraries_icon'" style="height: 100%;" layout="column" flex>
+			
+			<div class="image-list" layout="row" style="overflow: auto;height: 100%;">
+				<div class="folder_list" flex="25">
+					<div class="folist" ng-init="root_folder_index = -1;">
+						<div class="fitem" ng-init="root_folder_index=root_folder_index+1;folder_index=root_folder_index; pFolders= (folder)" ng-repeat="folder in folders" ng-class="{active:folder.path == current_folder}">
+						   <div class="fitem_inner" ng-click="openFolder(folder)">
+							   
+							   <div class="fitem_bg">
+								   <i class="arrow arrow-plus"></i><i class="folder"></i><span class="">{{folder.name}}</span>
+							   </div>
+						   </div>
+						</div>
+					</div>
+					
+				</div>
+				<div class="asset_list"  flex="75" layout-padding>
+					<md-virtual-repeat-container class="filist">
+						<div class="item-row" md-virtual-repeat="row in files">
+							<div class="item_wrapper" ng-click="selectFile(file,$index)" ng-class="{selected:file.selected}" ng-repeat="file in row | filter:searchPhrase">
+							   <div class="item">
+									<div class="thumb_holder" layout-align="center center">
+										<img ng-src="{{file.thumbnail}}" class="thumb" alt="{{file.name}}">
+									</div>
+								</div>
+								<div class="fi_name">{{file.name}}</div>
+							</div>
+						</div>
+					</md-virtual-repeat-container>
+				</div>
+			</div>
+		</div>
+		<div class="" ng-show="current_tab.id=='themes'"  style="height: 100%;" layout="column" flex >
+			<div class="image-list" layout="row">
+				<div class="folder_list"  flex="25">
+					<div class="folist" ng-init="root_folder_index = -1;">
+						<div class="fitem" ng-class="{active:current_folder == ''}">
+						   <div class="fitem_inner" ng-click="openFolder()">
+							   <div class="fitem_bg">
+									<span class="">Default folder</span>
+							   </div>
+						   </div>
+						</div>
+						<div class="fitem" ng-init="root_folder_index=root_folder_index+1;folder_index=root_folder_index; pFolders= (folder)" ng-repeat="folder in folders" ng-class="{active:folder.path == current_folder}">
+						   <div class="fitem_inner" ng-click="openFolder(folder)">
+							   <div class="fitem_bg">
+								   <i class="arrow arrow-plus"></i><i class="folder"></i><span class="">{{folder.name}}</span>
+							   </div>
+						   </div>
+						</div>
+					</div>
+					
+				</div>
+				<div class="asset_list"  flex="75" layout-padding>
+					
+					<md-virtual-repeat-container class="filist">
+						<div class="item-row" md-virtual-repeat="row in files">
+							<div class="item_wrapper" ng-click="selectFile(file,$index)" ng-class="{selected:file.selected}" ng-repeat="file in row | filter:searchPhrase">
+							   <div class="item">
+									<div class="thumb_holder" layout-align="center center">
+										<img ng-src="{{file.thumbnail}}" class="thumb" alt="@{{file.name}}">
+									</div>
+										
+								</div>
+								<div class="fi_name">{{file.name}}</div>
+							</div>
+						</div>
+					</md-virtual-repeat-container>
+				</div>
+			</div>
+		</div>
+		<div class="" ng-show="current_tab.id=='link'">
+			<div class="">
+				<div class="im-toolbar" layout-padding>
+					<div class="input-group">
+						<input type="text" class="form-control" ng-model="url" placeholder="Enter Image Link"/>
+						<span class="input-group-btn">
+							<md-button class="" ng-click="addImageUrl()"><i class="fa fa-search"></i>&nbsp
+							</md-button>
+						</span>
+					</div>
+				</div>
+				<div class="filist">
+					
+					<div class="item_wrapper" ng-click="selectFile(file,$index)" ng-class="{selected:file.selected}" ng-repeat="file in remote_files">
+					   <div class="item">
+							<div class="thumb_holder" layout-align="center center">
+								<img ng-src="{{file.thumbnail}}" class="thumb" alt="{{file.name}}">
+							</div>
+								
+						</div>
+						<div class="fi_name">{{file.name}}</div>
+					</div>
+				 
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+</div>
+</div>
+</md-dialog-content>
+	<md-dialog-actions layout="row" class="layout-row">
+		
+		<span flex="" class="flex"></span>
+		<md-button ng-disabled="selectedFiles.length == 0" class="md-raised md-primary" ng-click="ok()" >{{'filemanager.select' | lang}}</md-button>
+      </span></button>
+    </md-dialog-actions>
+</md-dialog>
+</div>

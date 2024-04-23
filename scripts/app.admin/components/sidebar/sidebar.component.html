@@ -1,0 +1,39 @@
+<md-content layout="column" flex>
+	<md-toolbar  id="toolbar" class="md-menu-toolbar">
+	<div class="md-toolbar-tools">
+		<md-button class="md-icon-button" aria-label="" ng-click="toggleLeft()" hide-gt-sm=>
+			<md-icon class="fa fa-bars"></md-icon>&nbsp
+		</md-button>
+		<md-button class="md-icon-button" aria-label="" href="#users/list">
+		  <md-icon class="fa fa-user"></md-icon>&nbsp
+		</md-button>
+		<md-button class="md-icon-button" aria-label="" href="#settings/general">
+			<md-icon class="fa fa-cog"></md-icon>&nbsp
+		</md-button>
+		<h2 flex md-truncate>
+		</h2>
+
+		<md-menu-bar>
+		  <md-menu md-position-mode="left bottom">
+			<button ng-click="$mdMenu.open()">
+				<i class="fa fa-user"></i>
+				{{auth()->user()->name}}
+				<i class="fa fa-angle-down"></i>
+			</button>
+			<md-menu-content>
+			  <md-menu-item>
+				<md-button href="#profile">
+					@lang('profile.profile')
+				</md-button>
+			  </md-menu-item>
+			  <md-menu-divider></md-menu-divider>
+			  <md-menu-item>
+				<md-button href="{{route("logout")}}">
+					@lang('profile.sign_out')
+				</md-button>
+			  </md-menu-item>
+			</md-menu-content>
+			</md-menu>
+		</md-menu-bar>
+	</div>
+</md-toolbar>

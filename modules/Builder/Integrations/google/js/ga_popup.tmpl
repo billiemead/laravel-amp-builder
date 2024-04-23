@@ -1,0 +1,59 @@
+<md-dialog  rc-drag="md-toolbar" aria-label="Google Analytic" flex="50">
+	<form ng-submit="ok()" name="form" ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Google Analytic</h2>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <md-icon class="fa fa-times" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<div ng-show="!hasAccount">
+				<md-button ng-click="openOauthDialog()" class="md-raised md-secondary">{{'add_account' | lang}}</md-button>
+			</div>
+			<div ng-show="hasAccount">
+				<md-button ng-click="openOauthDialog()" class="md-raised md-secondary">{{'add_account' | lang}}</md-button>
+				<md-input-container class="md-block">
+					<label>Account</label>
+					<md-select required ng-model="data.connectionId" ng-change="changeConnection()">
+						<md-option value="" ng-selected="connectionId==''">@lang('profile.entry_select_account')</md-option>
+						<md-option ng-repeat="connection in analytic_connections" value="{{connection.id}}">{{connection.name}}</md-option>
+					</md-select>
+				</md-input-container>
+				<md-input-container class="md-block">
+					<label>@lang('profile.entry_accountId')</label>
+					<md-select required ng-model="data.accountId" ng-change="changeAccount()">
+						<md-option value="" ng-selected="accountId==''">@lang('profile.entry_select_account')</md-option>
+						<md-option ng-repeat="account in accounts" value="{{account.id}}">{{account.name}}</md-option>
+					</md-select>
+				</md-input-container>
+				<md-input-container class="md-block">
+					<label>@lang('profile.entry_webPropertyId')</label>
+					<md-select required ng-model="data.webPropertyId" ng-change="changeProperty()">
+						<md-option value="" ng-selected="data.webPropertyId==''">@lang('profile.entry_select_property')</md-option>
+						<md-option ng-repeat="property in properties" value="{{property.id}}">{{property.name}}</md-option>
+					</md-select>
+				</md-input-container>
+				<md-input-container class="md-block">
+					<label>@lang('profile.entry_profileId')</label>
+					<md-select required ng-model="data.profileId">
+						<md-option value="" ng-selected="profileId==''">@lang('profile.entry_select_profile')</md-option>
+						<md-option ng-repeat="profile in profiles" value="{{profile.id}}">{{profile.name}}</md-option>
+					</md-select>
+				</md-input-container>
+			</div>
+			
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		<md-button ng-click="openOauthDialog()" ng-show="hasAccount" class="md-raised md-secondary">{{'add_more_account' | lang}}</md-button>
+		<span flex></span>
+		<md-button type="submit" class="md-raised md-primary" ng-show="hasAccount">{{'ok' | lang}}</md-button>
+		<md-button ng-click="$dismiss()">{{'cancel' | lang}}</md-button>
+    </md-dialog-actions>
+  </form>
+	</md-dialog>

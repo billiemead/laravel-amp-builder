@@ -1,0 +1,19 @@
+<collapsible-item item-title="Input" initially-open="true">
+	<div class="form-group">
+		<label>{{'formmodule.hidden_popup.entry_name' | lang}}</label>
+		<input type="text" class="form-control" ng-model="data.name" ng-change="changeData()"/>
+	</div>
+	<div class="form-group">
+		<label>{{'formmodule.hidden_popup.entry_source' | lang}}</label>
+		<select ng-model="data.source" class="form-control"  ng-change="changeData()">
+			<option value="default">{{'formmodule.hidden_popup.source_default' | lang}}</option>
+			<option value="get">{{'formmodule.hidden_popup.source_get' | lang}}</option>
+			<option value="cookie">{{'formmodule.hidden_popup.source_cookie' | lang}}</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label>{{'formmodule.hidden_popup.entry_value' | lang}}</label>
+		<input type="text" ng-model="data.value" class="form-control" ng-change="changeData()">
+	</div>
+	
+</collapsible-item>

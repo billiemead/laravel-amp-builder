@@ -1,0 +1,11 @@
+<div layout="row" class="ui-panel-tab" style="">
+	<div class="main-sidebar" flex="{{size}}">
+		<div class="sidebar-menu" ng-transclude>
+		  
+		</div>
+	  </div>
+	<div class="tab-content" layout-padding flex>
+	<div class="tab-pane" ng-repeat="tab in tabs" ng-class="{active: tab.active}" ui-paneltab-content-transclude="tab">
+	</div>
+	</div>
+</div>

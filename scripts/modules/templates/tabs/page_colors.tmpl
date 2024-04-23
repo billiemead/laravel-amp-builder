@@ -1,0 +1,13 @@
+<collapsible-item item-title="Colors" initially-open="true">
+	<md-button class="md-raised md-accent" ng-click="customizeColorscheme()">{{'customize' | lang}}</md-button>
+	<md-list class="color-list" flex>
+		<md-list-item ng-repeat="(name,colorScheme) in colorSchemes track by $index" class="color-scheme-item" ng-class="{selected:currentScheme == name}"  ng-click="applyScheme(name,colorScheme)">
+			<md-tooltip md-direction="left">{{name}}</md-tooltip>
+			<div class="preview">
+			<div ng-repeat="i in colorScheme.display track by $index" class="preview_item" style="background-color:{{i}}">
+			</div>
+			</div>
+		</md-list-item>
+	</md-list>
+	<md-button class="md-raised md-secondary" ng-click="loadColorscheme()">{{'more' | lang}}</md-button>
+</collapsible-item>

@@ -1,0 +1,18 @@
+<collapsible-item item-title="{{'hover_state' | lang}}" initially-open="true">
+	<widget-style-background-image selected-widget="$moduleInstance" children="hover"/>
+	<div class="row mt-3">
+		<div class="col-md-3">
+			<widget-style-label selected-widget="$moduleInstance" children="hover" el-style="color">{{'text_color' | lang }}</widget-style-label>
+		</div>
+		<div class="col-md-9">
+		<widget-style-color selected-widget="$moduleInstance" el-style="color" children="hover"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<widget-style-border selected-widget="$moduleInstance" children="hover"/>
+	</div>
+	<div class="form-group">
+		<label>{{'shadowtab.title' | lang}}</label>
+		<widget-style-box-shadow el-style="box-shadow" selected-widget="$moduleInstance" children="hover"/>
+	</div>
+</collapsible-item>

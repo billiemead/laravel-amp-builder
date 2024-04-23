@@ -1,0 +1,26 @@
+<collapsible-item item-title="{{'linemodule.title' | lang}}" initially-open="true">
+	<div class="row mt-3">
+		<div class="col-md-3">
+			<widget-style-label selected-widget="$moduleInstance" el-style="stroke-width">{{'linemodule.width' | lang }}</widget-style-label>
+		</div>
+		<div class="col-md-9">
+			<widget-style-number el-style="stroke-width" selected-widget="$moduleInstance"/>
+		</div>
+	</div>
+	<div class="row mt-3">
+		<div class="col-md-3">
+			<widget-style-label selected-widget="$moduleInstance" el-style="stroke-dasharray">{{'linemodule.dash' | lang }}</widget-style-label>
+		</div>
+		<div class="col-md-9">
+			<widget-style-number el-style="stroke-dasharray" selected-widget="$moduleInstance"/>
+		</div>
+	</div>
+	<div class="row mt-3">
+		<div class="col-md-3">
+			<widget-style-label selected-widget="$moduleInstance" el-style="stroke">{{'linemodule.color' | lang }}</widget-style-label>
+		</div>
+		<div class="col-md-9">
+			<widget-style-color el-style="stroke" selected-widget="$moduleInstance"/>
+		</div>
+	</div>
+</collapsible-item>

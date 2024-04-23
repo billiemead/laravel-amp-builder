@@ -1,0 +1,58 @@
+<collapsible-item item-title="{{'layout_tab.title' | lang}}" initially-open="true" ng-show="isFlexBox">
+	<div class="row form-group">
+		<div class="col-md-3">
+			<widget-style-label selected-widget="$moduleInstance" el-style="flex-direction">{{'layout_tab.flex_direction' | lang }}</widget-style-label>
+		</div>
+		<div class="col-md-9">
+			<widget-style-checkbox selected-widget="$moduleInstance" el-style="flex-direction">
+				<widget-style-checkbox-item value="row" text="Horizontal"/>
+				<widget-style-checkbox-item value="column" text="Vertical"/>
+			</widget-style-checkbox>
+		</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-md-3">
+			<widget-style-label selected-widget="$moduleInstance" el-style="align-items">{{'layout_tab.align_items' | lang }}</widget-style-label>
+		</div>
+		<div class="col-md-9">
+			<widget-style-checkbox selected-widget="$moduleInstance" el-style="align-items">
+				<widget-style-checkbox-item value="auto" icon="times"/>
+				<widget-style-checkbox-item value="flex-start" icon="align-items-start"/>
+				<widget-style-checkbox-item value="center" icon="align-items-center"/>
+				<widget-style-checkbox-item value="flex-end" icon="align-items-end"/>
+				<widget-style-checkbox-item value="stretch" icon="align-items-stretch"/>
+				<widget-style-checkbox-item value="baseline" icon="align-items-baseline"/>
+			</widget-style-checkbox>
+			
+		</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-md-3">
+			<widget-style-label selected-widget="$moduleInstance" el-style="flex-wrap">{{'layout_tab.flex_wrap' | lang }}</widget-style-label>
+		</div>
+		<div class="col-md-9">
+			<widget-style-checkbox selected-widget="$moduleInstance" el-style="flex-wrap">
+				<widget-style-checkbox selected-widget="$moduleInstance" style="flex-direction">
+				<widget-style-checkbox-item value="wrap" text="Wrap"/>
+				<widget-style-checkbox-item value="nowrap" text="No wrap"/>
+			</widget-style-checkbox>
+		</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-md-3">
+			<widget-style-label selected-widget="$moduleInstance" el-style="justify-content">{{'layout_tab.justify_items' | lang }}</widget-style-label>
+		</div>
+		<div class="col-md-9">
+			
+			<widget-style-checkbox selected-widget="$moduleInstance" el-style="justify-content">
+				<widget-style-checkbox-item value="auto" icon="times"/>
+				<widget-style-checkbox-item value="flex-start" icon="justify-content-start"/>
+				<widget-style-checkbox-item value="center" icon="justify-content-center"/>
+				<widget-style-checkbox-item value="flex-end" icon="justify-content-end"/>
+				<widget-style-checkbox-item value="space-between" icon="justify-content-space-between"/>
+				<widget-style-checkbox-item value="space-around" icon="justify-content-space-around"/>
+			</widget-style-checkbox>
+		</div>
+	</div>
+	
+</collapsible-item>

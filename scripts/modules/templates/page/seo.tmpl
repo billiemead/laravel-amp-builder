@@ -1,0 +1,49 @@
+<md-dialog rc-drag="md-toolbar" aria-label=" {{('seo')| lang }}" flex="60">
+	<form ng-cloak ng-submit="ok()">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2> {{('builder.pagepopup.seo')| lang }} </h2>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <i class="fa fa-times" aria-label="Close dialog"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<label> {{('builder.pagepopup.entry_canonical_url')| lang }} </label>
+			<md-input-container class="md-block">
+				<input type="text" ng-model="data.canonical_url" />
+			</md-input-container>
+			<p>{{('builder.pagepopup.entry_canonical_url_tooltip')| lang }}</p>
+			<label> {{('builder.pagepopup.entry_title')| lang }} </label>
+			<md-input-container class="md-block">
+				<textarea ng-model="data.title" required  dynamic-text-input></textarea>
+			</md-input-container>
+			<label>{{('builder.pagepopup.entry_keywords')| lang }} </label>
+			<md-input-container class="md-block">
+				<textarea ng-model="data.keywords" required  dynamic-text-input></textarea>
+			</md-input-container>
+			<label> {{('builder.pagepopup.entry_description')| lang }} </label>
+			<md-input-container class="md-block">
+				<textarea ng-model="data.description" required></textarea>
+			</md-input-container>
+			<label> {{('builder.pagepopup.entry_favicon')| lang }} </label>
+			<md-input-container class="md-block">
+				<input type="text" ng-model="data.favicon" />
+			</md-input-container>
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		
+    <span flex></span>
+		<md-button type="submit">
+			 {{('builder.ok')| lang }} 
+		</md-button>
+      <md-button ng-click="$dismiss()">
+         {{('builder.cancel')| lang }} 
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

@@ -1,0 +1,20 @@
+<ang-accordion editor-tabs="enabled_tabs" close-icon-class="fa fa-angle-up" open-icon-class="fa fa-angle-down">
+<md-toolbar class="widget-setting-header">
+	<div class="md-toolbar-tools">
+		{{$moduleInstance.getWidgetDisplayName()}}
+		<h2 flex md-truncate></h2>
+		<md-switch aria-label="{{'visibility' | lang}}" ng-change="setVisibility(extra_data.visibility)" ng-model="extra_data.visibility">{{'visibility' | lang}}</md-switch>
+	</div>
+</md-toolbar>
+<nav aria-label="breadcrumb" ng-show="extra_data.parents.length">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" ng-repeat="parent in extra_data.parents | repeatReverse"><a href="#" ng-click="parent.doSelect()">{{parent.getWidgetDisplayName()}}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{$moduleInstance.getWidgetDisplayName()}}</li>
+  </ol>
+</nav>
+	<md-tabs md-selected="selectedTabIndex" md-dynamic-height>
+		<md-tab label="{{name | lang}}" ng-repeat="(name,tab) in splitTabs" md-on-select="onSelectTab(name)">
+		</md-tab>
+	</md-tabs>
+	{{tabs}}
+</ang-accordion>

@@ -1,0 +1,45 @@
+<collapsible-item item-title="{{'carouselmodule.title' | lang}}" initially-open="true">
+	<div class="form-group">
+		<md-checkbox ng-model="data.autoplay" ng-change="changeData(false)">{{'carouselmodule.entry_autoplay' | lang}}</md-checkbox>
+	</div>
+	<div class="block" ng-show="data.autoplay">
+		<div class="form-group">
+			<label>{{'carouselmodule.entry_delay' | lang}}</label>
+			<input type="text" class="form-control" ng-model="data.delay" ng-change="changeData(false)">
+		</div>
+		<div class="form-group">
+			<md-checkbox ng-model="data.loop" ng-change="changeData(false)">{{'carouselmodule.entry_loop' | lang}}</md-checkbox>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<md-checkbox ng-model="data.thumbnail" ng-change="changeData(false)">{{'carouselmodule.entry_thumbnail' | lang}}</md-checkbox>
+	</div>
+	<div class="block" ng-show="data.thumbnail">
+		<div class="form-group">
+			<label>{{'carouselmodule.entry_thumbnail_width' | lang}}</label>
+			<input type="number" class="form-control" ng-model="data.thumbnail_width" ng-change="changeData(false)">
+		</div>
+		<div class="form-group">
+			<label>{{'carouselmodule.entry_thumbnail_height' | lang}}</label>
+			<input type="number" class="form-control" ng-model="data.thumbnail_height" ng-change="changeData(false)">
+		</div>
+	</div>
+</collapsible-item>
+<collapsible-item item-title="{{'carouselmodule.entry_slides' | lang}}" initially-open="true">
+	<label>{{'carouselmodule.entry_slides' | lang}}</label>
+	<md-button class="md-raised md-icon-button" ng-click="addFile($index)"><i class="fa fa-plus"></i></md-button>
+	<div class="form-group mt-3" ng-repeat="image in data.images track by $index">
+		
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<button class="btn btn-outline-secondary" ng-click="selectFile($index)">{{'imagemodule.browse' | lang}}</button>
+			</div>
+			<input type="text" class="form-control" ng-model="image.src" disabled="disabled">
+			<div class="input-group-prepend">
+				<button class="btn btn-danger" ng-click="removeFile($index)"><i class="fa fa-times"></i></button>
+			</div>
+		</div>
+	</div>
+</collapsible-item>
+

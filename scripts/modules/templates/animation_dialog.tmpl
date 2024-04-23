@@ -1,0 +1,30 @@
+<div rc-drag="md-toolbar" class="animation-popup">
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>
+				{{'LBL_ANIMATION_POPUP_DIALOG' | lang}}
+			</h2>
+			<span flex></span>
+			<md-button class="md-icon-button" ng-click="$dismiss()">
+				<i class="fa fa-times" aria-label="Close dialog"></i>
+			</md-button>
+		</div>
+	</md-toolbar>
+	<widget-dialog-content md-whiteframe="1">
+		<div class="md-dialog-content">
+			<div class="form-group">
+				<label><input ng-change="changeAnimation()" type="checkbox" ng-model="data.animation" />{{'LBL_ENABLE_ANIMATION' | lang}}</label>
+			</div>
+			<div class="form-group" ng-show="data.animation">
+				<label><input ng-change="changeAnimation()" type="checkbox" ng-model="data.animation_loop" />{{'LBL_ENABLE_ANIMATION_LOOP' | lang}}</label>
+			</div>
+			<div class="form-group" ng-show="data.animation">
+				<label>{{'LBL_ANIMATION_TYPE' | lang}}</label>
+				<div class="controls">
+					<select ng-change="changeAnimation()" ng-model="data.animation_type" ng-options="type as type for type in animation_types" class="form-control">
+					</select>
+				</div>
+			</div>
+		</div>
+	</widget-dialog-content>
+</div>

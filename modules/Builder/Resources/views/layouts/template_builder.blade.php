@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="{{sts_getBiDirection()}}" xml:lang="{{App::getLocale()}}" lang="{{App::getLocale()}}" ng-app="template_app" ng-strict-di>
+<head>
+	<script type="text/javascript">
+		var basePath  = '{{url("/")}}/';
+		var baseUrl  = '{url}';
+		var ajaxPath  = '{action}';
+		var apiPath  = "{{ route('templateApiRoute')}}";
+		var viewPath  = "{{ url('/view_url') }}/path/builder.{viewPath}";
+		var sectionviewPath  = '';
+		var template_edit_mode = true;
+		var themePath  = '{{asset("/")}}/themes/{name}';
+		var screenshot_handler  = '{{config("screenshot.provider")}}';
+		var listPath  = "{{ route('templateApiRoute', array('account'=>$account))}}/lists/{name}";
+		var themeCssUrl  = '{{url("/themes/{name}/style")}}';
+		var siteInfo = {!! json_encode($structure) !!};
+		var resolutions = {!! json_encode(config('resolutions')) !!};
+		var widgets = {!! json_encode(config('widgets')) !!};
+		var X_CSRF_TOKEN = "{{ csrf_token()}}";
+	</script>
+	@include('layouts.meta_tag') 
+	{!! \Assets::renderHeader() !!}
+	{!! \Themes::render('builder') !!}
+</head>
+
+<body id="page" >
+@include('layouts.preloader') 
+<div ng-token="{{JWTAuth::fromUser(auth()->user())}}"></div>
+<div class="full-height">
+	<div class="main_container full-height" layout="column">
+		@include('layouts.builder_loader') 
+		
+		<md-toolbar id="control-panel-holder" class="md-hue-2" ng-controller="headerController">
+			<div class="" layout="row" layout-wrap>
+				<md-button class="md-icon-button" aria-label="Settings">
+					<i class="fa fa-bars"></i>
+				</md-button>
+				@if($structure['type'] == 'page')
+				<div page-tabs></div>
+				@endif
+				<page-resolutions></page-resolutions>
+				<md-button class="md-raised md-icon-button md-secondary" ng-disabled="!canUndo" ng-click="doUndo()">
+					<i class="fa fa-undo"></i>
+				</md-button>
+				<md-button  class="md-raised md-icon-button md-secondary" ng-disabled="!canRedo" ng-click="doRedo()">
+					<i class="fa fa-redo"></i>
+				</md-button>
+				<div widget-control></div>
+				<h2 flex md-truncate>
+				</h2>
+				<md-button class="md-button" ng-click="history()" aria-label="@lang('builder.history')">
+				 @{{'history' | lang}}
+				</md-button>
+				<md-button class="md-button" ng-click="save()" aria-label="@lang('builder.save')">
+				 @{{'save' | lang}}
+				</md-button>
+				<md-button class="md-button" ng-click="manageScreenshot()">
+				  @{{'screenshot' | lang}}
+				</md-button>
+				<md-button class="md-button" href="{{$site['preview_url']}}" target="_blank" aria-label=" @lang('builder.preview')">
+				  @{{'preview' | lang}}
+				</md-button>
+				<md-button class="md-icon-button" aria-label="" ng-click="toogleRightPanel()" hide-gt-md>
+					<i class="fa fa-bars"></i>
+				</md-button>
+				 
+			</div>
+		</md-toolbar>
+		<div id="editor_container" class="full-height position-relative" flex layout="row">
+			<div class="leftPanel" id="leftPanel-container" layout="row">
+				
+			</div>
+			<div id="customize_preview" class="full-height flex" style="vertical-align:top">
+				<div id="iframelive">
+					<div id="frameWrapper">						
+						<div id="edit_page_meta" data-src="{{route('iframeTemplate', ['account'=>$account])}}">
+						</div>
+					</div>
+				</div>
+			</div>
+			<md-sidenav id="editing-container" md-component-id="rightPanel" md-is-locked-open="$mdMedia('gt-md')" class="md-sidenav-right"  md-disable-backdrop="$mdMedia('gt-md')"  md-disable-close-events="$mdMedia('gt-md')" >
+				
+				
+			</md-sidenav>
+			
+		</div>
+	</div>
+</div>
+{!! \Assets::renderFooter() !!}
+@include('layouts.sentry') 
+@include('builder::language')
+</body>
+</html>

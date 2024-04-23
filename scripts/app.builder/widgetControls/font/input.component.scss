@@ -1,0 +1,14 @@
+widget-style-input{
+	> div{
+		display: grid; grid-template-columns: 1fr auto; transform: translate3d(0px, 0px, 0px);
+		input{
+			grid-area: 1 / 1 / 2 / -1; padding: 0px 20px 0px 4px; border-width: 1px; border-style: solid; border-color: rgb(33, 33, 33); border-radius: 2px; line-height: 22px; background: rgb(43, 43, 43) none repeat scroll 0% 0%; box-sizing: border-box; display: block; width: 100%; color: inherit; font-size: inherit; font-family: inherit; outline: currentcolor none 0px;
+			
+		}
+		.UnitSelector{
+			outline: currentcolor none 0px; cursor: default; user-select: none; font-size: 9px; font-family: -apple-system, BlinkMacSystemFont, &quot;proxima-nova&quot;, &quot;Roboto&quot;, Arial, sans-serif, Georgia, serif; line-height: 12px; letter-spacing: 0.005em; text-transform: uppercase; color: rgb(166, 166, 166); place-self: stretch; grid-area: 1 / 2 / 2 / 3; z-index: 1; min-width: 16px; border-radius: 1px; height: auto; text-align: center; border-width: 0px; margin: 1px; position: relative; display: flex; align-items: center; justify-content: center; padding-right: 0px; padding-left: 0px; background: transparent none repeat scroll 0% 0%; border-style: solid; border-color: transparent; box-sizing: border-box;
+		}
+	}
+	
+	
+}

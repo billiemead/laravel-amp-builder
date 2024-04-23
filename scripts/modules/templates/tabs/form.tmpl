@@ -1,0 +1,51 @@
+<collapsible-item item-title="{{'formmodule.configuration_tab.title' | lang}}" initially-open="true">
+	<div class="form-group">
+		<md-checkbox ng-model="data.enable_recaptcha" ng-change="changeData(false)">{{'formmodule.enable_recaptcha' | lang}}</md-checkbox>
+	</div>
+	<div class="block" ng-show="data.enable_recaptcha">
+		<div class="form-group">
+			<div ng-if="data.g_recaptcha">
+			<label>{{'formmodule.already_connected' | lang}}</label>
+			<btn class="btn btn-outline-secondary" ng-click="connectRecaptcha()" >{{'formmodule.re_connect_recaptcha' | lang}}</btn>
+			</div>
+			<btn class="btn btn-outline-secondary" ng-click="connectRecaptcha()" ng-if="!data.g_recaptcha">{{'formmodule.connect_recaptcha' | lang}}</btn>
+		</div>
+	</div>
+	<div class="form-group">
+		<label>{{'formmodule.entry_submit_success_action' | lang}}</label>
+		<select class="form-control" ng-change="changeData(false)" ng-model="data.actionType">
+			<option value="message">{{'formmodule.action_type.message' | lang}}</option>
+			<option value="url">{{'formmodule.action_type.url' | lang}}</option>
+			<option value="popup">{{'formmodule.action_type.popup' | lang}}</option>
+		</select>
+	</div>
+	<div class="block" ng-show="data.actionType == 'message'">
+		<div class="form-group">
+			<label>{{'formmodule.action_type.entry_message' | lang}}</label>
+			<input type="text" class="form-control" ng-model="data.message" ng-change="changeData(false)"/>
+		</div>
+	</div>
+	<div class="block" ng-show="data.actionType == 'url'">
+		<div class="form-group">
+			<label>{{'formmodule.action_type.url_link' | lang}}</label>
+			<input type="text" class="form-control" ng-model="data.href" ng-change="changeData(false)"/>
+		</div>
+		
+	</div>
+	<div class="block" ng-show="data.actionType == 'url_popup'">
+		<div class="form-group">
+			<label>{{'formmodule.action_type.popup_link' | lang}}</label>
+			<input type="text" class="form-control" ng-model="data.href" ng-change="changeData(false)"/>
+		</div>
+	</div>
+	
+	<div class="block" ng-show="data.actionType == 'popup'">
+		<div class="form-group">
+			<label>{{'formmodule.action_type.entry_popup' | lang}}</label>
+			<select class="form-control" ng-change="changeData(false)" ng-model="data.popup">
+				<option value="{{popup.id}}" ng-repeat="popup in popups">{{popup.name}}</option>
+			</select>
+		</div>
+	</div>
+	
+</collapsible-item>

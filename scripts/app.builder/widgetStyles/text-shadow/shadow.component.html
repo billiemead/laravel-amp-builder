@@ -1,0 +1,10 @@
+<md-button class="md-icon-button" ng-click="vm.addShadow($event)"><i class="fa fa-plus"></i></md-button>
+	
+<md-list>
+	<md-list-item class="secondary-button-padding" ng-repeat="shadow in vm.shadows" ng-click="vm.editShadow($index, $event)">
+		<p>{{shadow | widgetStyleShadow}}</p>
+		<md-button ng-click="vm.removeShadow($index, $event)" class="md-secondary md-icon-button"><i class="fa fa-trash"></i></md-button>
+		<md-button ng-click="vm.moveUpShadow($index, $event)" class="md-secondary md-icon-button"><i class="fa fa-arrow-up"></i></md-button>
+		<md-button ng-click="vm.moveDownShadow($index, $event)" class="md-secondary md-icon-button" ng-show="$index > 0"><i class="fa fa-arrow-down"></i></md-button>
+	</md-list-item>
+</md-list>

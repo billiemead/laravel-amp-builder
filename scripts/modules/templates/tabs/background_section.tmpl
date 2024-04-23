@@ -1,0 +1,25 @@
+<collapsible-item item-title="{{'background_overlay' | lang}}" initially-open="true">
+	
+	<div class="form-group row mt-3">
+		<label class="col-sm-2 col-form-label">{{'overlay_color' | lang}}</label>
+		<div class="col-sm-10">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<button class="btn btn-color-picker" colorpalettepicker ng-model="overlay_styles.backgroundColor" ng-change="changeOverlayStyle('background-color', overlay_styles.backgroundColor)" style="background:{{overlay_styles.backgroundColor.value || overlay_styles.backgroundColor}}">&nbsp</button>
+				</div>
+				<input class="form-control" ng-model="overlay_styles.backgroundColor" ng-change="changeOverlayStyle('background-color', overlay_styles.backgroundColor)" colorpaletteinput/>
+			</div>
+		</div>
+	</div>
+	
+	<div class="form-group row mt-3">
+		<label class="col-sm-2 col-form-label">{{'overlay_opacity' | lang}}</label>
+		<div class="col-sm-10">	
+			<select class="form-control" ng-model="overlay_styles.opacity" ng-change="changeOverlayStyle('opacity', overlay_styles.opacity)">
+				<option ng-repeat="a in range(11) track by $index" ng-value="($index / 10) + ''">{{$index * 10}}%</option>
+			</select>
+		</div>
+	</div>
+	
+	
+</collapsible-item>

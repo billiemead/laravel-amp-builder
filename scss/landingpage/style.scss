@@ -1,0 +1,76 @@
+@import '../bootstrap/bootstrap';
+
+@import '../mdb-bootstrap/scss/mdb';
+@import './cookie-consent';
+
+html, body, header, .view{
+	height:100%;
+}
+.top-nav-collapse {
+    background-color: $mdb-color-darken-4 !important;
+}
+header{
+	.nav-link{
+		padding:1rem 1rem;
+	}
+}
+footer{
+	text-align:center;
+	background-color: $mdb-color-darken-4;
+	color:$mdb-color-lighten-4;
+	padding: 0.5rem;
+	a{
+		color:$white-base;
+		&:hover{
+			color:inherit;
+		}
+	}
+}
+.pricing-card{
+	text-align: center;
+	margin-bottom: 1.5rem;
+	.header{
+		.version{
+			border-radius: .25rem .25rem 0 0;
+			padding: 1rem;
+			width:100%;
+			background-color:rgba(0,0,0,.3);
+		}
+		.number{
+			font-size: 5rem;
+			padding: 1.5rem;
+			font-weight: 300;
+			.unit{
+				font-size: 1.88rem
+			}
+		}
+	}
+	.card-body{
+		ul{
+			list-style:none;
+			&.darker-striped{
+			}
+		}
+	}
+}
+#templates{
+	.card {
+		margin-bottom:1rem;
+		.card-body{
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			display:none;
+		}
+		&:hover{
+			.card-body{
+				display:block;
+			}
+		}
+	}
+}
+.navbar-brand{
+	img.logo{
+		width:55%;
+	}
+}

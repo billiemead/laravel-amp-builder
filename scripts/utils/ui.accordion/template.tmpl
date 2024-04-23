@@ -1,0 +1,15 @@
+<div class="collapsible-item" ng-class="{open: isOpenned}">
+	<md-toolbar>
+		<div class="md-toolbar-tools" ng-class="{disabled: itemDisabled}" ng-click="toggleCollapsibleItem()">
+			{{itemTitle}}
+			<i ng-show="iconsType == 'class'" class="{{icon}} icon" ng-class="{iconleft: iconIsOnLeft}">
+			</i>
+			<img ng-show="iconsType == 'url'" class="icon" ng-class="{iconleft: iconIsOnLeft}" ng-src="{{getIconUrl(iconsType)}}" />
+		</div>
+	</md-toolbar>
+	<div class="body">
+		<div class="content" ng-transclude>
+		</div>
+	</div>
+</div>
+ 

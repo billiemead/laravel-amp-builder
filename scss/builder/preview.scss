@@ -1,0 +1,67 @@
+body.preview-mode{
+/*livedemo*/
+	iframe,
+	#iframelive {
+		width: 100%;
+		background-color: #fff;
+		display: flex;
+		justify-content: center;
+	}
+	#iframelive.stretched {
+		overflow: auto;
+	}
+	* + html #iframelive.stretched {
+		height: 100%;
+	}
+	* + html #iframelive.stretched iframe {
+		height: 100%;
+	}
+	.opera #iframelive.stretched iframe {
+		height: 100%;
+	}
+	#iframelive {
+		height: 100%;
+		background: #7d7d7d;
+		flex-direction: column;
+align-items: center;
+	}
+	#iframelive iframe{
+		width: 100%;
+		height: 100%;
+	}
+	$mobileWidth:375px;
+	$mobileHeight:607px;
+
+	#iframelive #frameWrapper {
+		width:$mobileWidth + 30;
+		height: $mobileHeight + 30;
+		border-radius:15px;
+		background:#ccc;
+		margin: 0;
+		padding: 8px;
+		#frameCover{
+			width: 100%;
+			height: 100%;
+			
+			background:black;
+			border-radius:10px;
+			padding: 10px;
+		
+		#frameinnerCover{
+			
+			
+			border-radius:10px;
+			overflow:hidden;
+			height: 100%;
+		}
+	  }
+	 
+	}
+	#frameWrapper {
+	  background: none repeat scroll 0 0 transparent;
+	  height: 100%;
+	  margin: 0;
+	}
+
+}
+

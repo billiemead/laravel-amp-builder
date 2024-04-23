@@ -1,0 +1,12 @@
+<md-toolbar class="widget-setting-header">
+<div class="md-toolbar-tools">
+	{{display_name}}
+	<h2 flex md-truncate></h2>
+	<md-switch aria-label="{{'visibility' | lang}}" ng-change="setVisibility()" ng-model="data.visibility">{{'visibility' | lang}}</md-switch>
+
+</div>
+
+</md-toolbar>
+<md-button  class="md-raised md-icon-button md-secondary" ng-click="clone()">
+	<i class="fa fa-copy"></i>
+</md-button>

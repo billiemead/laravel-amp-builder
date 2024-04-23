@@ -1,0 +1,29 @@
+<collapsible-item item-title="{{'imagemodule.title' | lang}}" initially-open="true">
+	<div class="form-group">
+		<label>{{'offset_tab.size' | lang}}</label>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text">{{'offset_tab.width' | lang}}</span>
+					</div>
+					<input type="number" class="form-control" min=0 ng-model="slider_styles.width" ng-change="changeInnerSliderStyle('width', slider_styles.width)" placeholder="Width" aria-label="Width" aria-describedby="offset-width">
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<label>{{'imagemodule.entry_image' | lang}}</label>
+	<button class="btn" ng-click="addSlide()"><i class="fa fa-plus"></i></button>
+	<div class="form-group" ng-repeat="image in data.slides track by $index">
+		
+		<div class="input-group mb-3">
+			Slide #{{$index}}
+			<div class="input-group-prepend">
+				<button class="btn" ng-click="removeSlide($index)"><i class="fa fa-times"></i></button>
+			</div>
+		</div>
+	</div>
+	
+</collapsible-item>

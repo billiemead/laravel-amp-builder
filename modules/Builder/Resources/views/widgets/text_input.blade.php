@@ -1,0 +1,1 @@
+<input type="text" name="{{$widget->getPage_id()}}" placeholder="{{array_get($data,'placeholder')}}" />

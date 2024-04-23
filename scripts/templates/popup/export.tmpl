@@ -1,0 +1,70 @@
+<div class="modal-header" header-draggable>
+<button class="close" ng-click="$close()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+<h4 class="modal-title title">Export</h4>
+</div>
+<div class="modal-body" fix-body-height>
+	    <div class="">
+		<label><input type="radio" ng-model="data.mod" value="ftp">Export to FTP</label>
+	</div>
+	<div class="block" ng-show="data.mod == 'ftp'">
+		<div class="form-group">
+            <label class="control-label">Saved connection(<a href="javascript:void(0);" tooltip-append-to-body="true" uib-tooltip="List of all ftp connections, click Save to save current ftp information">?</a>)</label>
+            <div class="controls">
+				<select type="text" class="form-control">
+					<option value="" ng-click="currentConnectionId=0">New connection</option>
+					<option ng-repeat="connection in connectionList" ng-selected="currentConnectionId==connection.id" ng-click="setConnection(connection)">{{connection.data.username}}@{{connection.data.host_name}}@{{connection.data.folder}}</option>
+				</select>
+			</div>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Host name</label>
+            <div class="controls"><input type="text" class="form-control required" ng-model="data.host_name"/></div>
+			<span ng-repeat="error in errors.host_name" class="error">{{error}}</span>
+        </div>
+        
+        <div class="form-group">
+            <label class="control-label">Username</label>
+            <div class="controls"><input type="text" class="form-control required" ng-model="data.username" /></div>
+			<span ng-repeat="error in errors.username" class="error">{{error}}</span>
+        </div>
+		<div class="form-group">
+            <label class="control-label">Password</label>
+            <div class="controls"><input type="password" class="form-control required" ng-model="data.password" /></div>
+			<span ng-repeat="error in errors.password" class="error">{{error}}</span>
+        </div>
+		<div class="form-group">
+            <label class="control-label">Port</label>
+            <div class="controls"><input type="text" class="form-control required" ng-model="data.port" placeholder="21" /></div>
+			<span ng-repeat="error in errors.port" class="error">{{error}}</span>
+        </div>
+		<div class="form-group">
+            <label class="control-label">Remote folder(<a href="javascript:void(0);" tooltip-append-to-body="true" uib-tooltip="Remote directory on ftp server where the site data will be uploaded to">?</a>)</label>
+            <div class="controls">
+				<input type="text" ng-model="data.folder" class="form-control"/>
+			</div>
+        </div>
+		<div class="form-group" ng-show="browsed">
+            <div class="controls">
+				<select ng-model="browe_folder" class="form-control" multiple="multiple">
+					<option ng-repeat="folder in folders" ng-click="browseFtp(folder.path)" value="{{folder.path}}">{{folder.name}}</option>
+				</select>
+			</div>
+        </div>
+		<div class="btn-group">
+			
+			<button class="btn btn-warning" ng-click="saveFtp()">Save</button>
+			<button class="btn btn-danger" ng-click="deleteFtp()" ng-show="currentConnectionId!= 0">Delete connection</button>
+        </div>
+    </div>
+	<div class="">
+		<label><input type="radio" ng-model="data.mod" value="zip">Export to Zip</label>
+	</div>
+</div>
+
+<div class="modal-footer">
+	<button ng-show="data.mod == 'ftp'" class="btn btn-primary" ng-click="connectFtp()">Test connection</button>
+			<button ng-show="data.mod == 'ftp'" class="btn btn-primary" ng-click="browseFtp(data.folder)">Browse server</button>
+	<button class="btn btn-primary" ng-click="export()">Export</button>
+	
+    <button class="btn btn-danger" ng-click="$dismiss()">Close</button>
+</div>

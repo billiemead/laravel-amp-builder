@@ -1,0 +1,18 @@
+<collapsible-item item-title="{{'formmodule.integration_tab.title' | lang}}" initially-open="true" ng-if="!template_edit_mode">
+	<md-content layout-padding layout="row">
+		<md-list flex>
+		<md-list-item ng-repeat="(key,value) in data.integrations" ng-click="openIntegrationDialog(key)">
+			<img class="md-avatar" src="{{basePath}}/assets/images/integrations/{{key}}.png" ng-if="!providers[key].logo">
+			<img class="md-avatar" ng-src="{{providers[key].logo}}" ng-if="providers[key].logo.length">
+			{{providers[key].display_name}}
+			<md-button class="md-icon-button md-secondary" ng-click="removeIntegration(key)">
+				<i class="fa fa-trash"></i>
+			</md-button>
+			<md-tooltip>{{providers[key].display_name}}</md-tooltip>
+		</md-list-item>
+		</md-list>
+		
+	</md-content>
+	<md-button class="md-raised md-accent" ng-click="show_integration_providers()">{{'formmodule.choose_another_provider' | lang}}</md-button> 
+	
+</collapsible-item>

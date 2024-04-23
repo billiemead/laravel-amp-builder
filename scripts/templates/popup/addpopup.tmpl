@@ -1,0 +1,51 @@
+<md-dialog rc-drag="md-toolbar" aria-label=" {{('builder.popupmodule.add_title')| lang }} ">
+	<form ng-cloak ng-submit="ok(form)" name="form">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>
+		{{('builder.popupmodule.add_title')| lang }} 
+		</h2>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <i class="fa fa-times" aria-label="Close dialog"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<md-input-container class="md-block">
+				<label> {{('builder.popupmodule.entry_name')| lang }} </label>
+				<input ng-model="data.name" name="name" required>
+				<div ng-messages="form.name.$error">
+				  <div class="error" ng-message="uniqued">{{error}}</div>
+				</div>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label> {{('builder.popupmodule.type')| lang }} </label>
+				<md-select ng-model="data.type" required name="type">
+					<md-option value="lightbox">{{"builder.popupmodule.types.lightbox" | lang}}</md-option>
+					<md-option value="sidebar">{{"builder.popupmodule.types.sidebar" | lang}}</md-option>
+					<md-option value="user_notification">{{"builder.popupmodule.types.user_notification" | lang}}</md-option>
+					
+				</md-select>
+				<div>
+					<div ng-show="data.type == 'lightbox'">{{"builder.popupmodule.types_description.lightbox" | lang}}</div>
+					<div ng-show="data.type == 'sidebar'">{{"builder.popupmodule.types_description.sidebar" | lang}}</div>
+					<div ng-show="data.type == 'user_notification'">{{"builder.popupmodule.types_description.user_notification" | lang}}</div>
+				</div>
+			</md-input-container>
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		<span flex></span>
+		<md-button type="submit">
+			 {{('builder.ok')| lang }} 
+		</md-button>
+		<md-button ng-click="$dismiss()">
+         {{('builder.cancel')| lang }} 
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+

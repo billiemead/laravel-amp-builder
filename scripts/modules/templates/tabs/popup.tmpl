@@ -1,0 +1,17 @@
+<collapsible-item item-title="{{'popupmodule.settings' | lang}}" initially-open="true">
+	
+	<div class="" ng-if="data.popup_type =='user_notification'">
+		<div class="form-group">
+			<md-checkbox ng-model="data.non_persist_dismissal"  ng-change="changeData()">
+				{{'popupmodule.persist_dismissal' | lang}}
+			</select>
+		</div>
+	</div>
+	<div class="" ng-if="data.popup_type =='sidebar'">
+		<div class="form-group">
+			<md-checkbox ng-model="data.right_sidebar"  ng-change="changeData()">
+				{{'popupmodule.right_sidebar' | lang}}
+			</select>
+		</div>
+	</div>
+</collapsible-item>

@@ -1,0 +1,36 @@
+<md-dialog  rc-drag="md-toolbar" aria-label="CampaignMonitor" flex="50">
+	<form ng-submit="ok()" name="form" ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>CampaignMonitor</h2>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <md-icon class="fa fa-times" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<div>
+				<md-input-container class="md-block">
+					<label>CampaignMonitor API Key</label>
+					<input type="text" ng-model="api" required>
+				</md-input-container>
+				<md-input-container class="md-block">
+					<label>CampaignMonitor Client ID</label>
+					<input type="text" ng-model="client_id" required>
+				</md-input-container>
+				<p ng-bind-html="'formmodule.campaignmonitor_api_help' | lang"></p>
+			</div>
+			
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		<span flex></span>
+		<md-button type="submit" class="md-raised md-primary">{{'authorize' | lang }}</md-button>
+      
+	  <md-button ng-click="$dismiss()">{{'cancel' | lang }}</md-button>
+    </md-dialog-actions>
+  </form>
+	</md-dialog>

@@ -1,0 +1,6 @@
+<div ng-repeat="shadow in vm.shadows">
+{{shadow | widgetStyleShadow}}
+	<md-button ng-click="vm.editShadow($index, $event)"><i class="fa fa-pencil-alt"></i></md-button>
+	<md-button ng-click="vm.removeShadow($index, $event)"><i class="fa fa-trash"></i></md-button>
+</div>
+<md-button ng-click="vm.addShadow($event)"><i class="fa fa-plus"></i></md-button>

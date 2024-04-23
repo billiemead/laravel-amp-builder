@@ -1,0 +1,46 @@
+<md-dialog rc-drag="md-toolbar" aria-label=" {{('builder.image.title')| lang }} ">
+	<form ng-cloak ng-submit="ok()" name="form">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2> Form Addition Fields </h2>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <i class="fa fa-times" aria-label="Close dialog"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<div layout="row">
+				<div flex="30">Field Name</div>
+				<div flex="30">Data source
+				</div>
+				<div flex="30">Data value</div>
+			</div>
+			<div ng-repeat="field in fields" layout="row">
+				<div flex="30"><input type="text" ng-model="field.name" required class="form-control"></div>
+				<div flex="30">
+					<select ng-model="field.source" class="form-control">
+						<option value="default">Default</option>
+						<option value="get">GET param</option>
+						<option value="post">POST param</option>
+						<option value="cookie">COOKIE param</option>
+					</select>
+				</div>
+				<div flex="30"><input type="text" ng-model="field.value" class="form-control"></div>
+			</div>
+			<md-button class="md-primary" ng-click="add()">Add fields</md-button>
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		<span flex></span>
+		 <md-button type="submit">
+         {{('builder.ok')| lang }} 
+      </md-button>
+      <md-button ng-click="$dismiss()">
+         {{('builder.close')| lang }} 
+      </md-button>
+    </md-dialog-actions>
+  </form>
+	</md-dialog>

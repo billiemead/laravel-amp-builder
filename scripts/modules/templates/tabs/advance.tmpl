@@ -1,0 +1,19 @@
+<collapsible-item item-title="{{'advance' | lang}}" initially-open="true">
+
+	<div class="form-group mb-3 mt-3">
+		<label>{{'global_style' | lang}}<md-button class="" ng-click="createStyleTemplate()">{{'create_style' | lang}}</md-button></label>
+		
+		<div class="">
+			<md-select ng-model="extra_data.classAttribute" ng-change="applyStyleTemplate()">
+				<md-option value="">{{'not_set' | lang}}</md-option>
+				<md-option ng-value="class" ng-repeat="class in extra_data.classes">{{class.name}}</md-option>
+			</md-select>
+			<div class="input-group-append">
+				
+			</div>
+		</div>
+		
+		<p>{{'global_style_instruction' | lang}}</p>
+	</div>
+</collapsible-item>
+

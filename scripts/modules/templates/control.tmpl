@@ -1,0 +1,24 @@
+<md-button class="md-raised md-icon-button md-secondary" ng-click="$moduleInstance.moveUp()">
+	<i class="fa fa-arrow-up"></i>
+	<md-tooltip md-direction="bottom">Move up</md-tooltip>
+</md-button>
+<md-button class="md-raised md-icon-button md-secondary" ng-click="$moduleInstance.moveDown()">
+	<i class="fa fa-arrow-down"></i>
+	<md-tooltip md-direction="bottom">Move down</md-tooltip>
+</md-button>
+<md-button class="md-raised md-icon-button md-secondary" ng-click="clone()" ng-if="$moduleInstance.cloneable">
+	<md-tooltip md-direction="bottom">Duplicate</md-tooltip>
+	<i class="fa fa-clone"></i>
+</md-button>
+<md-button class="md-raised md-icon-button md-secondary" ng-click="paste()" ng-if="pasteable">
+	<i class="fa fa-paste"></i>
+	<md-tooltip md-direction="bottom">Paste</md-tooltip>
+</md-button>
+<md-button class="md-raised md-icon-button md-secondary" ng-click="copy()" ng-if="$moduleInstance.cloneable">
+	<md-tooltip md-direction="bottom">Copy</md-tooltip>
+	<i class="fa fa-copy"></i>
+</md-button>
+<md-button class="md-raised md-icon-button md-secondary" ng-click="remove()" ng-if="$moduleInstance.removable">
+	<i class="fa fa-trash"></i>
+	<md-tooltip md-direction="bottom">Remove</md-tooltip>
+</md-button>

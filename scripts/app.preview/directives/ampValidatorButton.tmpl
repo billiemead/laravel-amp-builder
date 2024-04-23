@@ -1,0 +1,14 @@
+<md-button class="md-raised md-icon-button md-secondary" ng-class="{'md-primary':success, 'md-warn':failed}" ng-click="validate()">
+	<i class="fa fa-bolt"></i>
+</md-button>
+<md-menu ng-show="errorLength">
+<span class="badge badge-danger" ng-click="$mdMenu.open($event)">{{errorLength}}</span>
+	<md-menu-content width="4">
+		<md-menu-item ng-repeat="error in errors">
+			<md-content layout-padding>
+			<span>{{error.message}}</span>
+			<a ng-show="error.specUrl" href="{{error.specUrl}}" target="_blank">Learn more</a>
+			</md-content>
+		</md-menu-item>
+	</md-menu-content>
+</md-menu>

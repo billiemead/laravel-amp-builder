@@ -1,0 +1,37 @@
+<collapsible-item item-title="{{'countdownmodule.title' | lang}}" initially-open="true">
+	<div class="row form-group">
+		<div class="col-md-3">
+			<widget-style-label selected-widget="$moduleInstance" el-style="flex-direction">{{'layout_tab.flex_direction' | lang }}</widget-style-label>
+		</div>
+		<div class="col-md-9">
+			<widget-style-checkbox selected-widget="$moduleInstance" el-style="flex-direction">
+				<widget-style-checkbox-item value="row" text="Horizontal"/>
+				<widget-style-checkbox-item value="column" text="Vertical"/>
+			</widget-style-checkbox>
+		</div>
+	</div>
+	<div class="form-group">
+		<label> {{('countdownmodule.entry_date_end')| lang }} </label>
+		<md-datepicker ng-model="picker.end_utc" md-placeholder="Enter date" ng-change="changeDate()"></md-datepicker>
+	</div>
+	<div class="form-group">
+		<div class="row">
+			<div class="col-md-4">
+				<label> {{('countdownmodule.entry_hour')| lang }} </label>
+				<input type="number" ng-model="time.hour" class="form-control" min=0 max=24 ng-change="changeTime()">
+			</div>
+			<div class="col-md-4">
+				<label> {{('countdownmodule.entry_minute')| lang }} </label>
+				<input type="number" ng-model="time.minute" class="form-control" min=0 max=59 ng-change="changeTime()">
+			</div>
+			<div class="col-md-4">
+				<label> {{('countdownmodule.entry_timezone')| lang }} </label>
+				<select type="number" ng-model="time.offset" class="form-control" ng-change="changeTime()">
+					<option ng-repeat="a in range(12) track by $index" value="{{$index - 12}}">UTC  - {{12 - $index }}</option>
+					<option value="0">UTC</option>
+					<option ng-repeat="a in range(11) track by $index" value="{{$index + 1}}">UTC + {{$index + 1}}</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</collapsible-item>

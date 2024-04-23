@@ -1,0 +1,22 @@
+<md-content  flex layout="flex-row" layout-padding class="md-whiteframe-1dp">
+	<div class="widget-style-border">
+		<div flex>
+			<label>Distance</label>
+			<widget-style-slider el-style="box-shadow" min="0" max="50" ng-value="vm.value.distance" on-update="vm.updateItem('distance', value)"/>
+		</div>
+		<div flex>
+			<label>Angle</label>
+			<widget-style-slider el-style="box-shadow" min="0" max="360" ng-value="vm.value.angle" on-update="vm.updateItem('angle', value)"/>
+		</div>
+		<div flex>
+			<label>Blur</label>
+			<widget-style-slider el-style="box-shadow" min="0" max="30" fix-unit="px" ng-value="vm.value.blurRadius" on-update="vm.updateItem('blurRadius', value)"/>
+		</div>
+		
+		<div flex>
+			<label>Color</label>
+			<widget-style-color el-style="box-shadow" with-opacity="true" ng-value="vm.value.color" on-update="vm.updateItem('color', value)"/>
+		</div>
+	</div>
+</md-content>
+

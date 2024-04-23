@@ -1,0 +1,17 @@
+{
+    "name": "Builder",
+    "alias": "builder",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Builder\\Providers\\BuilderServiceProvider",
+		"Modules\\Builder\\Providers\\WidgetServiceProvider",
+		"Modules\\Builder\\Integrations\\IntegrationServiceProvider",
+		"Modules\\Builder\\Publishing\\ServiceProvider",
+		"Modules\\Builder\\Integrations\\salesforce\\ForrestServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

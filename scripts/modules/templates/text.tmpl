@@ -1,0 +1,163 @@
+<ang-accordion>
+	<collapsible-item item-title="Font" initially-open="true">
+		<div class="form-group" id="quill-toolbar">
+			<div class="form-group">
+				<select class="ql-header form-control">
+					<option selected="">Normal</option>
+					<option value="1">Heading 1</option>
+					<option value="2">Heading 2</option>
+					<option value="3">Heading 3</option>
+					<option value="4">Heading 4</option>
+					<option value="5">Heading 5</option>
+					<option value="6">Heading 6</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-6">
+						<label>Family</label>
+						<select class="ql-font form-control">
+							<option selected=""></option>
+							<option value="{{font}}" ng-repeat="font in fonts track by $index">{{font}}</option>
+						</select>
+					</div>
+					<div class="col-md-6">
+						<label>Size</label>
+						<select class="ql-size form-control">
+							<option selected=""></option>
+							<option value="{{$index + 1}}px" ng-repeat="a in range(72) track by $index">{{$index + 1}}px</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<label>Text color</label>
+					<button class="ql-color"></button>
+				</div>
+				<div class="col-md-6">
+					<label>Background color</label>
+					<button class="ql-background"></button>
+				</div>
+			</div>
+	
+			<span class="ql-formats">
+				<button class="ql-bold"></button>
+				<button class="ql-italic"></button>
+				<button class="ql-underline"></button>
+				<button class="ql-strike"></button>
+			</span>
+			<span class="ql-formats">
+			<button class="ql-list" value="ordered"></button>
+			<button class="ql-list" value="bullet"></button>
+			<select class="ql-align">
+			<option selected=""></option>
+			<option value="center"></option>
+			<option value="right"></option>
+			<option value="justify"></option>
+			</select>
+			</span>
+			
+		</div>
+		
+	</collapsible-item>
+	<collapsible-item item-title="Offset" initially-open="true">
+		<div class="form-group">
+			<label>Size</label>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="offset-width">W</span>
+						</div>
+						<input type="text" class="form-control" ng-model="offset.width" placeholder="Width" aria-label="Width" aria-describedby="offset-width">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="offset-height">H</span>
+						</div>
+						<input type="text" class="form-control" ng-model="offset.height" placeholder="Height" aria-label="Height" aria-describedby="offset-height">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label>Position</label>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="offset-top">T</span>
+						</div>
+						<input type="text" class="form-control" ng-model="offset.top" placeholder="Top" aria-label="Top" aria-describedby="offset-top">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="offset-left">L</span>
+						</div>
+						<input type="text" class="form-control" ng-model="offset.left" placeholder="Left" aria-label="Left" aria-describedby="offset-left">
+					</div>
+				</div>
+			</div>
+		</div>
+	</collapsible-item>
+	<collapsible-item item-title="Border" initially-open="true">
+		<div class="form-group">
+			<label>Border</label>
+			<div class="row">
+				<div class="col-md-4">
+					<select class="form-control" ng-change="changeStyle('border-style', styles.borderStyle)" ng-model="styles.borderStyle">
+						<option ng-repeat="style in styleList.borderStyle" value="{{style}}">{{style}}</option>
+					</select>
+				</div>
+				<div class="col-md-4">
+					<input class="form-control" ng-change="changeStyle('border-width', styles.borderWidth)" ng-model="styles.borderWidth">
+				</div>
+				<div class="col-md-4">
+					<input class="form-control" ng-model="styles.borderColor" ng-change="changeStyle('border-color', styles.borderColor)" colorpalettepicker/>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label>Location</label>
+			<select class="form-control"></select>
+		</div>
+		<div class="form-group">
+			<label>Direction</label>
+			<div flex layout="row">
+				<label>Top:</label>
+					<input type="checkbox" ng-model="styles.borderTopStyle" ng-true-value="''" ng-true-value="'none'" ng-change="changeStyle('border-top-style', styles.borderTopStyle)">
+				<label>Left:</label>
+					<input type="checkbox" ng-model="styles.borderLeftStyle" ng-true-value="''" ng-true-value="'none'" ng-change="changeStyle('border-left-style', styles.borderLeftStyle)">
+				<label>Bottom:</label>
+					<input type="checkbox" ng-model="styles.borderBottomStyle" ng-true-value="''" ng-true-value="'none'" ng-change="changeStyle('border-bottom-style', styles.borderBottomStyle)">
+				<label>Right:</label>
+					<input type="checkbox" ng-model="styles.borderRightStyle" ng-true-value="''" ng-true-value="'none'" ng-change="changeStyle('border-right-style', styles.borderRightStyle)">
+			</div>
+		</div>
+		<div class="form-group">
+			<label>Corner</label>
+			<input class="form-control" ng-change="changeStyle('border-radius', styles.borderRadius)" ng-model="styles.borderRadius">
+		</div>
+	</collapsible-item>
+	<collapsible-item item-title="Background" initially-open="true">
+		<div class="form-group">
+			<label>Color</label>
+			<input class="form-control" ng-model="styles.backgroundColor" ng-change="changeStyle('background-color', styles.backgroundColor)" colorpalettepicker/>
+		</div>
+		<div class="form-group">
+			<label>Image</label>
+			<div class="input-group mb-3">
+				
+				<input type="text" class="form-control" ng-model="styles.backgroundImage" ng-change="changeStyle('background-image', 'url(' + styles.backgroundImage + ')')">
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary" type="button">Browser</button>
+				</div>
+			</div>
+		</div>
+	</collapsible-item>
+</ang-accordion>

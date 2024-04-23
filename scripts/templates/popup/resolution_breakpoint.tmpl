@@ -1,0 +1,45 @@
+<md-dialog rc-drag="md-toolbar" aria-label=" {{('builder.resolutionpopup.add_title')| lang }} ">
+	<form ng-cloak ng-submit="ok()">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2> {{('builder.resolutionpopup.add_title')| lang }} </h2>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <i class="fa fa-times" aria-label="Close dialog"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<md-input-container class="md-block">
+				<label> {{('builder.resolutionpopup.entry_name')| lang }} </label>
+				<input type="text" ng-model="data.name" required >
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label> {{('builder.resolutionpopup.entry_breakpoint')| lang }} </label>
+				<input type="number" ng-model="data.breakpoint" required >
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label> {{('builder.resolutionpopup.entry_container_size')| lang }} </label>
+				<input type="number" ng-model="data.container_size" required >
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label> {{('builder.resolutionpopup.entry_popup_size')| lang }} </label>
+				<input type="number" ng-model="data.popup_size" required>
+			</md-input-container class="md-block">
+			
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		<span flex></span>
+		<md-button type="submit">
+			 {{('builder.ok')| lang }} 
+		</md-button>
+		<md-button ng-click="$dismiss()">
+         {{('builder.cancel')| lang }} 
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+

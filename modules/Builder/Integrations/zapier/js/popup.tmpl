@@ -1,0 +1,39 @@
+<md-dialog  rc-drag="md-toolbar" aria-label="Zapier Webook" flex="50">
+	<form ng-submit="ok()" name="form" ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Zapier Webook</h2>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <md-icon class="fa fa-times" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<md-input-container class="md-block">
+				<label>Zapier Webook URL</label>
+				<input type="text" required ng-model="data.url">
+			</md-input-container>
+			<p ng-bind-html="'formmodule.zapier_api_help' | lang"></p>
+			<div class="field-mappings">
+				<h3>Fields Mapping</h3>
+				<div layout="column">
+					<div class="field-mapping-row" layout="row" ng-repeat="field in fieldList">
+						<div flex="40">{{field.display_name}}</div>
+						<div flex="60">
+							<input type="text" class="form-control" required ng-model="data.fields[field.name]">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		<span flex></span>
+		<md-button type="submit" class="md-raised md-primary">{{'ok' | lang}}</md-button>
+		<md-button ng-click="$dismiss()">{{'cancel' | lang}}</md-button>
+    </md-dialog-actions>
+  </form>
+	</md-dialog>

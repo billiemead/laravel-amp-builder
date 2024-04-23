@@ -1,0 +1,119 @@
+$black:  #000 !default;
+
+$white:  #fff !default;
+$danger-color: #ff3547 !default;
+.background-danger-color {
+  background-color: $danger-color;
+}
+
+$danger-color-dark: #CC0000 !default;
+.danger-color-dark {
+  background-color: $danger-color-dark;
+}
+
+$warning-color: #ffbb33 !default;
+.background-warning-color {
+  background-color: $warning-color;
+}
+
+$warning-color-dark: #FF8800 !default;
+.warning-color-dark {
+  background-color: $warning-color-dark;
+}
+
+$success-color: #00C851 !default;
+.background-success-color {
+  background-color: $success-color;
+}
+
+$success-color-dark: #007E33 !default;
+.success-color-dark {
+  background-color: $success-color-dark;
+}
+
+$info-color: #33b5e5 !default;
+.background-info-color {
+  background-color: $info-color;
+}
+
+$info-color-dark: #0099CC !default;
+.info-color-dark {
+  background-color: $info-color-dark;
+}
+
+$default-color: #2BBBAD !default;
+.background-default-color {
+  background-color: $default-color;
+}
+
+$default-color-dark: #00695c !default;
+.default-color-dark {
+  background-color: $default-color-dark;
+}
+
+$primary-color: #4285F4 !default;
+.background-primary-color {
+  background-color: $primary-color;
+}
+
+$primary-color-dark: #0d47a1 !default;
+.primary-color-dark {
+  background-color: $primary-color-dark;
+}
+
+$secondary-color: #aa66cc !default;
+.background-secondary-color {
+  background-color: $secondary-color;
+}
+
+$secondary-color-dark: #9933CC !default;
+.secondary-color-dark {
+  background-color: $secondary-color-dark;
+}
+
+$elegant-color: #2E2E2E !default;
+.elegant-color {
+  background-color: $elegant-color;
+}
+
+$elegant-color-dark: #212121 !default;
+.elegant-color-dark {
+  background-color: $elegant-color-dark;
+}
+
+$stylish-color: #4B515D !default;
+.stylish-color {
+  background-color: $stylish-color;
+}
+
+$stylish-color-dark: #3E4551 !default;
+.stylish-color-dark {
+  background-color: $stylish-color-dark;
+}
+
+$special-color: #37474F !default;
+.special-color {
+  background-color: $special-color;
+}
+
+$special-color-dark: #263238 !default;
+.special-color-dark {
+  background-color: $special-color-dark;
+}
+
+$unique-color: #3F729B !default;
+.unique-color {
+  background-color: $unique-color;
+}
+
+$unique-color-dark: #1C2331 !default;
+.unique-color-dark {
+  background-color: $unique-color-dark;
+}
+
+$mdbcolor: #45526E !default;
+.mdb-color {
+  background-color: $mdbcolor;
+}
+
+$error-color: color("red", "base") !default;

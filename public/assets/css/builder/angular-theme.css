@@ -1,0 +1,80 @@
+a{
+	color:'{{foreground-1}}' !important;
+	
+}
+.accordion .editor-tab > .collapsible-item.open > .body, .accordion > .collapsible-item.open > .body
+{
+	color:'{{background-200}}';
+}
+.accordion .editor-tab > .collapsible-item md-toolbar, .accordion > .collapsible-item md-toolbar
+{
+	border-color:'{{background-900}}' !important;
+	background:'{{background-800}}';
+	color:'{{foreground-1}}';
+}
+#editing-container{
+	background:'{{background-800}}';
+}
+#editing-container md-tabs.md-tab[disabled], #editing-container md-tabs .md-tab[disabled], #editing-container md-tabs .md-tab[disabled] md-icon, #editing-container md-tabs .md-tab[disabled] md-icon
+{
+	color:'{{foreground-1}}';
+}
+.color-scheme-item.selected, .font-item.selected
+{
+	background:'{{accent-400}}';
+}
+widget-option button, widget-style-checkbox-item button
+{
+	background-color:'{{background-800}}' !important;
+	color:'{{foreground-1}}' !important;
+}
+md-dialog
+{
+	background:'{{background-900}}';
+	color:'{{foreground-1}}';
+}
+.widget-style-input
+{
+	color:'{{foreground-1}}' !important;
+}
+.widget-style-input input {
+	background:transparent;
+}
+.leftPanel > .tree-layers{
+	background:'{{background-color}}';
+	color:'{{foreground-2}}';
+	
+}
+treecontrol{
+	color:'{{foreground-2}}' !important;
+}
+treecontrol li .tree-label .visible-icon{
+	color:'{{foreground-1}}';
+}
+treecontrol.tree-light li .tree-selected
+{
+	background:'{{background-700}}' !important;
+}
+.file_manager-popup .im-toolbar, .gallery-media-popup .im-toolbar, .icon-manager-popup .im-toolbar
+{
+	background:'{{background-700}}' !important;
+}
+.file_manager-popup .folist .fitem.active > .fitem_inner, .gallery-media-popup .folist .fitem.active > .fitem_inner, .icon-manager-popup .folist .fitem.active > .fitem_inner
+{
+	background:'{{background-700}}' !important;
+}
+.file_manager-popup .filist .item_wrapper.selected, .file_manager-popup .filist .item_wrapper:hover, .gallery-media-popup .filist .item_wrapper.selected, .gallery-media-popup .filist .item_wrapper:hover, .icon-manager-popup .filist .item_wrapper.selected, .icon-manager-popup .filist .item_wrapper:hover
+{
+	border:1px solid '{{accent-500}}' !important;
+}
+widget-style-label a
+{
+	background:'{{accent-color}}' !important;
+}
+.form-control{
+	background:transparent !important;
+	color:'{{foreground-1}}' !important;
+}
+select.form-control option{
+	color:'{{background-color}}' !important;
+}

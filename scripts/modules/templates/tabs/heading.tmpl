@@ -1,0 +1,11 @@
+<collapsible-item item-title="{{'buttonmodule.label_title' | lang}}" initially-open="true">
+	<div class="form-group">
+		<label>{{'buttonmodule.entry_heading_type' | lang}}</label>
+		
+		<widget-radio ng-model="data.tag" ng-change="changeHeadingType()" style="display:block;margin-bottom:5px;">
+			<widget-option value="h{{$index + 1}}" text="H{{$index + 1}}" ng-repeat="a in range(6) track by $index"/>
+		</widget-radio>
+	</div>
+	
+	
+</collapsible-item>

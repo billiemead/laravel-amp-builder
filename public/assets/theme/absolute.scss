@@ -1,0 +1,28 @@
+
+section.section{
+	width: auto !important;
+	left: auto !important;
+	background-size:cover;
+	position:relative;
+	& > .container{
+		position:relative;
+		height:100%;
+		max-width:100%;
+
+	}
+	
+}
+
+
+.float-module{
+	position:absolute;
+	z-index:1;
+	
+}
+
+section .container {
+	margin: 0 auto;
+	padding: 0;
+}
+
+

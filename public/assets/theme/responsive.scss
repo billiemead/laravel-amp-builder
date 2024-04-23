@@ -1,0 +1,131 @@
+section.section, .popup-section
+{
+	> .container{
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		
+	}
+}
+.module:not(.column){
+	width:100%;
+}
+.module{
+	max-width:100%;
+	box-sizing: border-box;
+	z-index:auto;
+	margin-bottom:0.4rem;
+	&.button{
+		align-items: center;
+		justify-content: center;
+		display: flex;
+		
+	}
+	&.svg{
+		display: flex;
+	}
+	&.link_block{
+		display: flex;
+		text-decoration:none;
+	}
+	&.link_icon, &.link_image{
+		display: block;
+	}
+	&.box{
+		width:100%;
+		display:flex;
+		flex-direction:column;
+	}
+	&.image, &.embed, &.video{
+		text-align:center;
+	}
+	&.form_group{
+		display:flex;
+		flex-direction:column;
+	}
+	&.form{
+		> form{
+			display:flex;
+			flex-direction:column;
+			align-items: center;
+		}
+		text-align:center;
+		label {
+		  font-size: .875rem;
+		  font-weight: bold;
+		  display: block;
+		  margin-bottom: .5rem;
+		}
+		.module{
+			&.label,&.radio, &.checkbox{
+				text-align:left;
+			}
+			&.radio, &.checkbox{
+				label {
+					display: inline;
+				}
+			}
+			&.input, &.phone, &.email, &.dropdown, &.text_area, &.password,,&.number, &.multi_dropdown{
+				background:white;
+				border: 1px solid $gray-300;
+				textarea.user-invalid, input.user-invalid{
+					border:1px solid red;
+				}
+			}
+		}
+		amp-autocomplete{
+			width:100%;
+		}
+		input, select, textarea{
+		  font-family: inherit;
+		  font-size: inherit;
+		  display: block;
+		  width: 100%;
+		  height: 100%;
+		  padding: .5rem;
+		  margin:0;
+		  border: none;
+		  border-radius: inherit;
+		  background:inherit;
+		}
+		input[type="checkbox"],input[type="radio"]{
+			width: auto;
+			height:auto;
+			display: inline;
+		}
+		button.submit_button{
+			background:inherit;
+			border:none;
+			color:inherit;
+			font:inherit;
+			text-align:inherit;
+		}
+	}
+	&.carousel{
+		> amp-carousel{
+			.module.carousel_box{
+				display:flex;
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+				right: 0px;
+				padding: 10px 20px;
+				background-color: rgba(0,0,0,0.5);
+				z-index:2;
+				margin-bottom: 0;
+			}
+		}
+	}
+	&.slider{
+		> amp-carousel{
+			>div > div > div > .inner_slide{
+				margin:0 auto;
+				height:100%;
+			}
+		}
+	}
+}
+
+@import "padding.scss";
+@import "grid.scss";
+@import "popup.scss";

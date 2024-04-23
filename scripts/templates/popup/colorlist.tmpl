@@ -1,0 +1,31 @@
+<md-dialog rc-drag="md-toolbar" class="color-list" aria-label="Colors">
+	 <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h4>Colors</h4>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <i class="fa fa-times" aria-label="Close dialog"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="">
+			<md-virtual-repeat-container id="vertical-container" class="color-list">
+				<div md-virtual-repeat="colorScheme in colorSchemes" class="color-scheme-item repeated-item" ng-click="applyScheme(colorScheme)">
+					<md-button>
+					<div class="preview">
+						<div ng-repeat="color in colorScheme track by $index" class="preview_item" style="background-color:{{color['value']}}"></div>
+					</div>
+					</md-button>
+				</div>
+			</md-virtual-repeat-container>
+			
+			
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		<span flex></span>
+		<md-button class="" ng-click="$dismiss()()">Close</md-button> 
+	</md-dialog-actions>
+</md-dialog>

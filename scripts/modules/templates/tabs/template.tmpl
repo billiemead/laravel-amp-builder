@@ -1,0 +1,11 @@
+<collapsible-item item-title="{{'template' | lang}}" initially-open="true" ng-hide="!canConvertToGlobal && !canConvertToTemplate && !canConvertToTemplate">
+<md-button class="md-raised md-secondary" ng-click="saveGlobalTemplate()" ng-if="canConvertToGlobal">
+	{{'global_block_module.section_save_global' | lang}}
+</md-button>
+<md-button class="md-raised md-secondary" ng-click="saveTemplate()" ng-if="canConvertToTemplate" acl-show="saveTemplatePermission">
+	{{'system_template_save' | lang}}
+</md-button>
+<md-button  class="md-raised md-secondary" ng-click="saveMyTemplate()" ng-if="canConvertToTemplate">
+	{{'my_template_save' | lang}}
+</md-button>
+</collapsible-item>

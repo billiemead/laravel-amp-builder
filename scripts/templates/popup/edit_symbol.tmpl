@@ -1,0 +1,33 @@
+<md-dialog rc-drag="md-toolbar" aria-label="Video">
+	<form ng-cloak ng-submit="ok()" name="form">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Edit Global</h2>
+		
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$dismiss()">
+          <i class="fa fa-times" aria-label="Close dialog"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<md-input-container class="md-block">
+				<label> Name </label>
+				<input ng-model="data.name" required >
+			</md-input-container>
+			
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+		 <md-button ng-click="delete()" class="md-danger">
+         {{('builder.delete')| lang }} 
+      </md-button>
+		<span flex></span>
+		 <md-button type="submit">
+         {{('builder.ok')| lang }} 
+      </md-button>
+     
+    </md-dialog-actions>
+  </form>
+	</md-dialog>

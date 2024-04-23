@@ -1,0 +1,29 @@
+<widget-style-label el-style="border" selected-widget="vm.selectedWidget" children="{{vm.children}}" ng-if="vm.mode=='all'">{{'border' | lang}}</widget-style-label>
+<widget-style-label el-style="border-top" selected-widget="vm.selectedWidget" children="{{vm.children}}" ng-if="vm.mode=='top'">{{'border' | lang}}</widget-style-label>
+<widget-style-label el-style="border-left" selected-widget="vm.selectedWidget" children="{{vm.children}}" ng-if="vm.mode=='left'">{{'border' | lang}}</widget-style-label>
+<widget-style-label el-style="border-bottom" selected-widget="vm.selectedWidget" children="{{vm.children}}" ng-if="vm.mode=='bottom'">{{'border' | lang}}</widget-style-label>
+<widget-style-label el-style="border-right" selected-widget="vm.selectedWidget" children="{{vm.children}}" ng-if="vm.mode=='right'">{{'border' | lang}}</widget-style-label>
+<div class="widget-style-border" flex layout="flex-row">
+
+
+<div class="widget-style-border" flex="">
+	<widget-radio ng-value="vm.mode" on-update="vm.changeMode(value)" style="text-align:center">
+		<widget-option value="top" icon="border-top" style="display:block;margin-bottom:5px;"/>
+		<widget-option value="left" icon="border-left"/>
+		<widget-option value="all" icon="border-all" />
+		
+		<widget-option value="right" icon="border-right"/>
+		<widget-option value="bottom" icon="border-bottom" style="display:block;margin-top:5px;"/>
+	</widget-radio>
+</div>
+<div class="widget-style-border" flex="">
+	<widget-radio el-style="{{vm.currentProperty}}-style" ng-value="vm.currentEditValue.style" on-update="vm.updateItem('style', value)" style="display:block;margin-bottom:5px;">
+		<widget-option value="none" icon="times"/>
+		<widget-option value="solid" icon="border-solid"/>
+		<widget-option value="dotted" icon="border-dotted"/>
+		<widget-option value="dashed" icon="border-dashed"/>
+	</widget-radio>
+	<widget-style-number el-style="{{vm.currentProperty}}-width" ng-value="vm.currentEditValue.width" on-update="vm.updateItem('width', value)" style="display:block;margin-bottom:5px;"/>
+	<widget-style-color el-style="{{vm.currentProperty}}-color" ng-value="vm.currentEditValue.color" on-update="vm.updateItem('color', value)"/>
+</div>
+</div>

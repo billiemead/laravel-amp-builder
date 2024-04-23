@@ -1,0 +1,78 @@
+<collapsible-item item-title="{{'offset_tab.title' | lang}}" initially-open="true">
+	<div class="form-group" ng-show="isResizable">
+		<label>{{'offset_tab.size' | lang}}</label>
+		<div class="row">
+			<div class="col-md-6" ng-show="resizableHandlers.width">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<widget-style-label selected-widget="$moduleInstance" el-style="width">{{'offset_tab.width' | lang }}</widget-style-label>
+						<widget-style-number el-style="width" selected-widget="$moduleInstance"/>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6" ng-show="resizableHandlers.height">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<widget-style-label selected-widget="$moduleInstance" el-style="height">{{'offset_tab.height' | lang }}</widget-style-label>
+						<widget-style-number el-style="height" selected-widget="$moduleInstance"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row form-group" ng-show="isFlexibleElement">
+		<div class="col-md-3">
+			<widget-style-label selected-widget="$moduleInstance" el-style="align-self">{{'offset_tab.align' | lang }}</widget-style-label>
+		</div>
+		<div class="col-md-9">
+			<widget-style-checkbox selected-widget="$moduleInstance" el-style="align-self">
+				<widget-style-checkbox-item value="auto" icon="times"/>
+				<widget-style-checkbox-item value="flex-start" icon="align-left"/>
+				<widget-style-checkbox-item value="center" icon="align-center"/>
+				<widget-style-checkbox-item value="flex-end" icon="align-right"/>
+				<widget-style-checkbox-item value="stretch" icon="align-justify"/>
+			</widget-style-checkbox>
+		</div>
+	</div>
+</collapsible-item>
+<collapsible-item item-title="{{'amp_layout_tab.title' | lang}}" initially-open="true" ng-if="isAMPElement">
+	<div class="row form-group" ng-hide="fixedAMPLayout">
+		<div class="col-md-3">
+			<label>{{'amp_layout_tab.layout' | lang }}</label>
+		</div>
+		<div class="col-md-9">
+			<select class="form-control" ng-model="amp_layout.layout" ng-change="changeAMPLayout(amp_layout.type)">
+				<option value="fill">Fill</option>
+				<option value="responsive">Responsive</option>
+				<option value="fixed-height">Fixed height</option>
+			</select>
+		</div>
+	</div>
+	<div class="row" ng-show="amp_layout.layout == 'fixed-height'">
+		<div class="col-md-3">
+			<label>{{'amp_layout_tab.height' | lang }}</label>
+		</div>
+		<div class="col-md-9">
+			<input type="number" class="form-control" ng-model="amp_layout.height" ng-change="changeAMPLayout()" ng-model-options="{ debounce: 500 }">
+		</div>
+	</div>
+	<div class="row" ng-show="amp_layout.layout == 'responsive'">
+		<div class="col-md-3">
+			<label>{{'amp_layout_tab.ratio' | lang }}</label>
+		</div>
+		<div class="col-md-9">
+			<input type="text" class="form-control" ng-model="amp_layout.ratio" ng-change="changeAMPLayout()" ng-model-options="{ debounce: 500 }">
+		</div>
+	</div>
+	<div class="row" ng-show="amp_layout.layout == 'fixed'">
+		<div class="col-md-6">
+			<label>{{'amp_layout_tab.width' | lang }}</label>
+			<input type="number" class="form-control" ng-model="amp_layout.width" ng-change="changeAMPLayout()" ng-model-options="{ debounce: 500 }">
+		</div>
+		<div class="col-md-6">
+			<label>{{'amp_layout_tab.height' | lang }}</label>
+			<input type="number" class="form-control" ng-model="amp_layout.height" ng-change="changeAMPLayout()" ng-model-options="{ debounce: 500 }">
+		</div>
+	</div>
+</collapsible-item>

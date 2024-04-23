@@ -1,0 +1,14 @@
+<collapsible-item item-title="{{'border' | lang}}" initially-open="true">
+	<div class="form-group">
+		<widget-style-border selected-widget="$moduleInstance" children="image"/>
+	</div>
+	
+	<div class="form-group">
+		<widget-style-label selected-widget="$moduleInstance" el-style="border-radius">{{'corner' | lang }}</widget-style-label>
+		<widget-style-corner selected-widget="$moduleInstance" children="image"/>
+	</div>
+	<div class="form-group">
+		<label>{{'shadowtab.title' | lang}}</label>
+		<widget-style-box-shadow el-style="box-shadow" selected-widget="$moduleInstance" children="image"/>
+	</div>
+</collapsible-item>

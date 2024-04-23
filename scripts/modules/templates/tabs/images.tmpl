@@ -1,0 +1,17 @@
+<collapsible-item item-title="{{'carouselmodule.title' | lang}}" initially-open="true">
+	<label>{{'carouselmodule.entry_slides' | lang}}</label>
+	<md-button class="md-raised" ng-click="addFile($index)"><i class="fa fa-plus"></i></md-button>
+	<div class="form-group" ng-repeat="image in data.images track by $index">
+		
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<button class="btn btn-outline-secondary" ng-click="selectFile($index)">{{'imagemodule.browse' | lang}}</button>
+			</div>
+			<input type="text" class="form-control" ng-model="image.src" disabled="disabled">
+			<div class="input-group-prepend">
+				<button class="btn" ng-click="removeFile($index)"><i class="fa fa-times"></i></button>
+			</div>
+		</div>
+	</div>
+	
+</collapsible-item>

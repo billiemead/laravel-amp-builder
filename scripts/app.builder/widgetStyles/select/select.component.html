@@ -1,0 +1,8 @@
+<div class="widget-style-select">
+<md-select ng-model="vm.value" ng-change="vm.onchange()">
+	<md-option ng-repeat="item in vm.items track by $index" ng-value="item">
+	  {{item}}
+	</md-option>
+</md-select>
+
+</div>

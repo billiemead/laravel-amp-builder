@@ -1,0 +1,42 @@
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:  #000 !default;
+$white:  #fff !default;
+
+$color-0:lighten($info-color, 35%);
+$color-5:lighten($info-color, 20%);
+$color-10:$info-color;
+$color-15:darken($info-color, 10%);
+$color-20:darken($info-color, 20%);
+
+$color-1:lighten($secondary-color, 35%);
+$color-6:lighten($secondary-color, 20%);
+$color-11:$secondary-color;
+$color-16:darken($secondary-color, 10%);
+$color-21:darken($color-16, 10%);
+
+$color-2:lighten($primary-color, 35%);
+$color-7:lighten($primary-color, 20%);
+$color-12:$primary-color;
+$color-17:darken($primary-color, 10%);
+$color-22:darken($primary-color, 25%);
+
+
+$color-3:lighten($danger-color, 35%);
+$color-8:lighten($danger-color, 20%);
+$color-13:$danger-color;
+$color-18:darken($danger-color, 10%);
+$color-23:darken($color-18, 10%);
+
+$color-4:lighten($warning-color, 35%);
+$color-9:lighten($warning-color, 20%);
+$color-14:$warning-color;
+$color-19:darken($warning-color, 10%);
+$color-24:darken($color-19, 10%);

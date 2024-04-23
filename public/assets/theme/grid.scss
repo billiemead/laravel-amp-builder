@@ -1,0 +1,87 @@
+$layout-spacing: .4rem !default;
+.module{
+	&.box{
+		padding-left: $layout-spacing;
+		padding-right: $layout-spacing;
+	}
+	&.row {
+	  display: flex;
+	  flex-wrap: wrap;
+
+
+	  &.col-gapless {
+		margin-left: 0;
+		margin-right: 0;
+
+		& > .column {
+		  padding-left: 0;
+		  padding-right: 0;
+		}
+	  }
+	  &.col-oneline {
+		flex-wrap: nowrap;
+		overflow-x: auto;
+	  }
+	}
+	&.column {
+		display:flex;
+		flex-direction:column;
+		flex: 1;
+		max-width: 100%;
+		padding-left: $layout-spacing;
+		padding-right: $layout-spacing;
+
+	  &.col-12,
+	  &.col-11,
+	  &.col-10,
+	  &.col-9,
+	  &.col-8,
+	  &.col-7,
+	  &.col-6,
+	  &.col-5,
+	  &.col-4,
+	  &.col-3,
+	  &.col-2,
+	  &.col-1,
+	  &.col-auto {
+		flex: none;
+	  }
+	}
+}
+
+.col-12 {
+  width: 100%;
+}
+.col-11 {
+  width: 91.66666667%;
+}
+.col-10 {
+  width: 83.33333333%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-8 {
+  width: 66.66666667%;
+}
+.col-7 {
+  width: 58.33333333%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-5 {
+  width: 41.66666667%;
+}
+.col-4 {
+  width: 33.33333333%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-2 {
+  width: 16.66666667%;
+}
+.col-1 {
+  width: 8.33333333%;
+}

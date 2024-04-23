@@ -1,0 +1,37 @@
+<md-toolbar class="widget-setting-header">
+<div class="md-toolbar-tools">
+	{{display_name}}
+	<h2 flex md-truncate></h2>
+</div>
+</md-toolbar>
+
+
+<collapsible-item item-title="{{'offset_tab.align' | lang}}" initially-open="true">
+	
+	<div class="form-group">
+		<md-button class="md-raised md-button-s-icon md-secondary" ng-click="$moduleInstance.align('left')">
+			<md-tooltip md-direction="bottom">Horizontal left</md-tooltip>
+			<i class="fa fa-align-left"></i>
+		</md-button>
+		<md-button class="md-raised md-button-s-icon md-secondary" ng-click="$moduleInstance.align('right')">
+			<md-tooltip md-direction="bottom">Horizontal right</md-tooltip>
+			<i class="fa fa-align-right"></i>
+		</md-button>
+		<md-button class="md-raised md-button-s-icon md-secondary" ng-click="$moduleInstance.align('center')">
+			<md-tooltip md-direction="bottom">Horizontal center</md-tooltip>
+			<i class="fa fa-align-center"></i>
+		</md-button>
+		<md-button class="md-raised md-button-s-icon md-secondary" ng-click="$moduleInstance.align('auto', 'top')">
+			<md-tooltip md-direction="bottom">Vertical top</md-tooltip>
+			<i class="fa fa-align-right" style="transform:rotate(-90deg);"></i>
+		</md-button>
+		<md-button class="md-raised md-button-s-icon md-secondary" ng-click="$moduleInstance.align('auto', 'center')">
+			<md-tooltip md-direction="bottom">Vertical center</md-tooltip>
+			<i class="fa fa-align-center"style="transform:rotate(-90deg);"></i>
+		</md-button>
+		<md-button class="md-raised md-button-s-icon md-secondary" ng-click="$moduleInstance.align('auto', 'bottom')">
+			<md-tooltip md-direction="bottom">Vertical bottom</md-tooltip>
+			<i class="fa fa-align-right" style="transform:rotate(90deg);"></i>
+		</md-button>
+	</div>
+

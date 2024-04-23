@@ -1,0 +1,10 @@
+<collapsible-item item-title="Fonts" initially-open="true">
+	<md-button class="md-raised md-accent" ng-click="addFont()">{{'add' | lang}}</md-button>
+	<md-list class="color-list" flex>
+		<md-list-item ng-repeat="font in data.fonts track by $index" class="font-item">
+			<md-tooltip md-direction="left">{{font.name}}</md-tooltip>
+			<p>{{font.name}}</p>
+			<md-icon class="md-secondary" ng-click="removeFont($index)" aria-label="" md-font-icon="fa fa-trash" ng-if="selected_font!=font"></md-icon>
+		</md-list-item>
+	</md-list>
+</collapsible-item>

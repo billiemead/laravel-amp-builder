@@ -1,0 +1,81 @@
+<collapsible-item item-title="{{'buttonmodule.label_title' | lang}}" initially-open="true">
+	<div class="row mt-3 mb-3">
+		<div class="col-md-3">
+			<widget-style-label selected-widget="$moduleInstance" el-style="color">{{'color' | lang }}</widget-style-label>
+		</div>
+		<div class="col-md-9">
+		<widget-style-color selected-widget="$moduleInstance" el-style="color"/>
+		</div>
+	</div>
+	<div class="row mb-3">
+		<div class="col-md-3">
+			<widget-style-label selected-widget="$moduleInstance" el-style="font-family">{{'textmodule.text_toolbar.entry_font' | lang }}</widget-style-label>
+		</div>
+		<div class="col-md-9">
+			<widget-style-font selected-widget="$moduleInstance" el-style="font-family"/>
+		</div>
+	</div>
+	<div class="row mb-3">
+		<div class="col-md-6">
+			<widget-style-label el-style="font-size" selected-widget="$moduleInstance">{{'textmodule.text_toolbar.entry_font_size' | lang }}</widget-style-label>
+			<widget-style-number el-style="font-size" selected-widget="$moduleInstance"/>
+		</div>
+		
+		<div class="col-md-6">
+			<widget-style-label el-style="line-height" selected-widget="$moduleInstance">{{'textmodule.text_toolbar.entry_line_height' | lang }}</widget-style-label>
+			<widget-style-number el-style="line-height" selected-widget="$moduleInstance"/>
+		</div>
+	
+	</div>
+	
+	<div class="row mb-3">
+		<div class="col-md-3">
+			<widget-style-label selected-widget="$moduleInstance" el-style="font-weight">{{'textmodule.text_toolbar.entry_font_weight' | lang }}</widget-style-label>
+		</div>
+		<div class="col-md-9">
+			<widget-style-select selected-widget="$moduleInstance" el-style="font-weight"/>
+		</div>
+	</div>
+	<div class="mb-3 justify-content-between" flex layout="row">
+		<div>
+			<widget-style-checkbox selected-widget="$moduleInstance" el-style="font-style">
+				<widget-style-checkbox-item value="normal" icon="times"/>
+				<widget-style-checkbox-item value="italic" icon="italic"/>
+			</widget-style-checkbox>
+			<widget-style-label selected-widget="$moduleInstance" el-style="font-style" style="justify-content:center;">{{'textmodule.text_toolbar.entry_style' | lang }}</widget-style-label>
+		</div>
+		<div>
+		<widget-style-checkbox selected-widget="$moduleInstance" el-style="text-decoration">
+			<widget-style-checkbox-item value="none" icon="times"/>
+			<widget-style-checkbox-item value="line-through" icon="strikethrough"/>
+			<widget-style-checkbox-item value="underline" icon="underline"/>
+			<widget-style-checkbox-item value="overline" icon="overline"/>
+		</widget-style-checkbox>
+		<widget-style-label selected-widget="$moduleInstance" el-style="text-decoration" style="justify-content:center;">{{'textmodule.text_toolbar.entry_decoration' | lang }}</widget-style-label>
+		</div>
+	</div>
+	<div class="mb-3 justify-content-between" flex layout="row">
+		<div style="margin-left:5px;">
+		<widget-style-checkbox selected-widget="$moduleInstance" el-style="text-align">
+			<widget-style-checkbox-item value="left" icon="align-left"/>
+			<widget-style-checkbox-item value="center" icon="align-center"/>
+			<widget-style-checkbox-item value="right" icon="align-right"/>
+			<widget-style-checkbox-item value="justify" icon="align-justify"/>
+		</widget-style-checkbox>
+		<widget-style-label selected-widget="$moduleInstance" el-style="text-align" style="justify-content:center;">{{'textmodule.text_toolbar.entry_align' | lang }}</widget-style-label>
+		</div>
+		<div>
+		<widget-style-checkbox selected-widget="$moduleInstance" el-style="text-transform">
+			<widget-style-checkbox-item value="none" icon="times"/>
+			<widget-style-checkbox-item value="uppercase" icon="uppercase"/>
+			<widget-style-checkbox-item value="capitalize" icon="capitalize"/>
+			<widget-style-checkbox-item value="lowercase" icon="lowercase"/>
+		</widget-style-checkbox>
+		<widget-style-label selected-widget="$moduleInstance" el-style="text-transform" style="justify-content:center;">{{'textmodule.text_toolbar.entry_transform' | lang }}</widget-style-label>
+		</div>
+	</div>
+	<div class="mb-3">
+		<widget-style-label selected-widget="$moduleInstance" el-style="text-shadow">{{'shadowtab.text_title' | lang }}</widget-style-label>
+		<widget-style-text-shadow el-style="text-shadow" selected-widget="$moduleInstance"/>
+	</div>
+</collapsible-item>

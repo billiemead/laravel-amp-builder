@@ -1,0 +1,44 @@
+<md-dialog rc-drag="md-toolbar">
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>Google Fonts</h2>
+			<span flex></span>
+			<md-button class="md-icon-button" ng-click="$dismiss()"><md-icon class="fa fa-times" aria-label="Close dialog"></md-icon></<md-button>
+		</div>
+	</md-toolbar>
+	<md-dialog-content>
+		<div layout="column" style="height:100%;">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<div class="input-group-text">
+					<i class="fa fa-search"></i>
+					</div>
+				</div>
+				<input type="text" class="form-control" ng-model="search">
+			</div>
+			<div class="" style="height:100%;">
+				<md-list flex style="height:100%;">
+					<md-virtual-repeat-container id="vertical-container" style="min-height:200px;">
+					<md-list-item md-virtual-repeat="font in fonts | filter: search">
+						{{font.family}}
+						<md-menu class="md-secondary">
+						  <md-button class="md-icon-button">
+						  </md-button>
+						  <md-menu-content width="4">
+							<md-menu-item>
+								<md-button ng-click="selectFont(font.family)">Select</md-button>
+							</md-menu-item>
+							<md-menu-item>
+								<md-button href="https://fonts.google.com/specimen/{{font.family}}" target="_blank">Preview</md-button>
+							</md-menu-item>
+							</md-menu-content>
+						</md-menu>
+					</md-list-item>
+					</md-virtual-repeat-container>
+				</md-list>
+				
+			</div>
+		</div>
+	</md-dialog-content>
+		
+</md-dialog>

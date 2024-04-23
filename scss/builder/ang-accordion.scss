@@ -1,0 +1,57 @@
+.accordion {
+
+	md-toolbar.widget-setting-header{
+		md-switch{
+			margin:0;
+		}
+		cursor:pointer;
+		background-color: $gray-400;
+		color: #000;
+		height: 40px;
+		min-height: 40px;
+		font-size: 16px;
+		.md-toolbar-tools{
+			font-size:inherit;
+		}
+	}
+	.widget-action-toolbar{
+		.widget-action-buttons{
+			margin:5px 0;
+		}
+	}
+	.collapsible-item .icon
+	{
+		float: none;
+		font-size: 14px !important;
+		padding-right: 1px;
+		text-align: center;
+		line-height: 20px;
+		position: absolute;
+		right: 0;
+	}
+	.editor-tab > .collapsible-item, > .collapsible-item{
+		md-toolbar{
+			cursor:pointer;
+			height: 40px;
+			min-height: 40px;
+			font-size: 16px;
+			border:1px solid;
+			.md-toolbar-tools{
+				font-size:inherit;
+				text-transform: capitalize;
+			}
+		}
+		> .body{
+			padding:0;
+			transition:unset;
+		}
+		&.open{
+			> .body{
+				padding:10px;
+			}
+		}
+		&.border{
+			border:none  !important;
+		}
+	}
+}

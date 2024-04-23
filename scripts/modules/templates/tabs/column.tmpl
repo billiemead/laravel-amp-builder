@@ -1,0 +1,10 @@
+<collapsible-item item-title="{{'column' | lang}}" initially-open="true" ng-show="isFlexBox">
+	<div class="row form-group">
+		<div class="col-md-3">
+			<label>{{'size' | lang }}</label>
+		</div>
+		<div class="col-md-9">
+			<input type="number" max="12" min="1" ng-model="extra_data.size" ng-change="setSize(extra_data.size)" class="form-control"/>
+		</div>
+	</div>
+</collapsible-item>

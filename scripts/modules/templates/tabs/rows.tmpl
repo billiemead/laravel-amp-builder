@@ -1,0 +1,13 @@
+<collapsible-item item-title="{{'layout_tab.title' | lang}}" initially-open="true" ng-show="isFlexBox">
+	<div class="row form-group">
+		<div class="col-md-3">
+			<widget-style-label selected-widget="$moduleInstance" el-style="flex-direction">{{'layout_tab.flex_direction' | lang }}</widget-style-label>
+		</div>
+		<div class="col-md-9">
+			<widget-style-checkbox selected-widget="$moduleInstance" el-style="flex-direction">
+				<widget-style-checkbox-item value="row" text="Horizontal"/>
+				<widget-style-checkbox-item value="column" text="Vertical"/>
+			</widget-style-checkbox>
+		</div>
+	</div>
+</collapsible-item>
